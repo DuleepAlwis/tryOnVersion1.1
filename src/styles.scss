@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*
+@import "./assets/css/animate.scss";
+@import "./assets/css/bootstrap.min.scss";
+@import "./assets/css/flaticon.scss";
+@import "./assets/css/font-awesome.min.scss";
+@import "./assets/css/jquery-ui.min.scss";
+@import "./assets/css/owl.carousel.min.scss";
+@import "./assets/css/slicknav.min.scss";
+*/
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/*@import "./assets/css/normalize.scss";
+@import "./assets/css/main.scss";*/
+
+.imgBox:hover {
+    box-shadow: 10px 10px 10px 10px;
+}
+
+.imgCloth:hover {}
+
+.zoom-effect-container {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.image-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-card img {
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.zoom-effect-container:hover .image-card img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+
+/*.nav-item:hover .nav-link {
+    color: greenyellow
+}*/
+
+
+/*.navbar-nav:hover .nav-item {
+    color: greenyellow
+}*/
+
+
+/*.nav-link {
+    color: honeydew !important
+}*/
+
+.order-table th {
+    position: sticky !important;
+    top: 0 !important;
+}
+
+.home-background {
+    background: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 30px;
+    background-size: cover;
+}
+
+.header-title {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: blue; // font-size: 2em;
+    letter-spacing: 1px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, orange, blue);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
