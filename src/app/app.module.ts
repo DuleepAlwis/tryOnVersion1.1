@@ -14,23 +14,44 @@ import { ProductService } from './services/product.service';
 import { SearchProductService } from './services/search-product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './HomeWeb/login/login.component';
+import { RegisterComponent } from './HomeWeb/register/register.component';
+import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-credentials.component';
+import { ProductsComponent } from './HomeWeb/products/products.component';
+import { ProductViewComponent } from './HomeWeb/product-view/product-view.component';
+import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.component';
+import { ReceptionistModule } from './receptionist/receptionist-products/receptionist.module';
+import { OrdersComponent } from './HomeWeb/orders/orders.component';
+import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
+import { OrderDetailsComponent } from './common/order-details/order-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeNaviationComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetCredentialsComponent,
+    ProductsComponent,
+    ProductViewComponent,
+    ShoppingCartComponent,
+    OrdersComponent,
+    CustomerOrdersComponent,
+    OrderDetailsComponent
   ],
   imports: [
-    BrowserModule,
+BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ReceptionistModule
+
   ],
   providers: [AuthGuardService,AuthInterceptorService,AuthService,CustomerService,OrderService,ProductService,SearchProductService,
-  ShoppingCartService],
+  ShoppingCartService, {provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
