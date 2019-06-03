@@ -50,6 +50,10 @@ export class ShoppingCartComponent implements OnInit {
   quantity: string;
   displayBtn: boolean = false;
   email:string;
+  districts = ["Ampara", "Anuradhapura","Badulla","Batticaloa","Colombo","Galle","Gampaha",
+  "Hambantota","Jaffna", "Kalutara","Kandy", "Kegalle", "Kilinochchi", "Kurunegala", "Mannar", "Matale",
+  "Matara", "Moneragala", "Mullaitivu", "Nuwara Eliya", "Polonnaruwa", "Puttalam", "Ratnapura",
+  "Trincomalee", "Vavuniya"];
   formDelivery = new FormGroup({
     name: new FormControl("", [Validators.required]),
     address: new FormControl("", [Validators.required]),
