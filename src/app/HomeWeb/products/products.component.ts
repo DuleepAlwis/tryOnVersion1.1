@@ -16,16 +16,32 @@ export class ProductsComponent implements OnInit {
   headerTitle = "";
   constructor(private productService: ProductService) {}
 
-  ngOnInit() {}
-
-  getAllShorts() {
+  ngOnInit() {
     this.items = [[]];
+    this.getAllBelts(1);
+    this.getAllCaps(1);
+    this.getAllGloves(1);
+    this.getAllHandBags(1);
+    this.getAllShirts(1);
+    this.getAllShorts(1);
+    this.getAllTrousers(1);
+    this.headerTitle = "Shirts Shorts Trousers Accessories"
+  }
 
+  getAllShorts(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllTights("Shorts").subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Shorts";
+        if(empArray==0)
+        {
+          this.headerTitle = "Shorts";
+
+        }
 
         let i = 0;
         let j = 0;
@@ -33,6 +49,11 @@ export class ProductsComponent implements OnInit {
 
         let tmp = [];
         //tmp[0] = responseData.result[0];
+     /*   for(i=0;i<responseData.result.length+1;i++)
+        {
+          responseData.result[i].category = "Shorts";
+        }
+        */
         for (i = 1; i < responseData.result.length + 1; i++) {
           j = 1;
 
@@ -57,14 +78,20 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  getAllTrousers() {
-    this.items = [[]];
-
+  getAllTrousers(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllTights("Trousers").subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Trousers";
+        if(empArray==0)
+        {
+          this.headerTitle = "Trousers";
+
+        }
 
 
         let i = 0;
@@ -109,7 +136,11 @@ i = i+2
           }
 
         }*/
-
+      /*  for(i=0;i<responseData.result.length+1;i++)
+        {
+          responseData.result[i].category = "Trousers";
+        }
+        */
         let tmp = [];
         //tmp[0] = responseData.result[0];
         for (i = 1; i < responseData.result.length + 1; i++) {
@@ -136,20 +167,31 @@ i = i+2
     });
   }
 
-  getAllShirts() {
-    this.items = [[]];
-
+  getAllShirts(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllClothes().subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Shirts";
+        if(empArray==0)
+        {
+          this.headerTitle = "Shirts";
+
+        }
+
 
 
         let i = 0;
         let j = 0;
         console.log(responseData.result);
-
+     /*   for(i=0;i<responseData.result.length+1;i++)
+        {
+          responseData.result[i].category = "Shirts";
+        }
+        */
         let tmp = [];
         //tmp[0] = responseData.result[0];
 
@@ -177,19 +219,29 @@ i = i+2
     });
   }
 
-  getAllCaps() {
-    this.items = [[]];
-
+  getAllCaps(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllCaps().subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Caps";
+        if(empArray==0)
+        {
+          this.headerTitle = "Caps";
+
+        }
 
 
         let i = 0;
         let j = 0;
         console.log(responseData.result);
+        for(i=0;i<responseData.result.length;i++)
+        {
+          responseData.result[i].category = "Caps";
+        }
         let tmp = [];
         //tmp[0] = responseData.result[0];
         for (i = 1; i < responseData.result.length + 1; i++) {
@@ -214,14 +266,22 @@ i = i+2
     });
   }
 
-  getAllHandBags() {
-    this.items = [[]];
-
+  getAllHandBags(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllHandBags().subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "HandBags";
+
+        if(empArray==0)
+        {
+          this.headerTitle = "HandBags";
+
+        }
+
 
 
         let i = 0;
@@ -229,6 +289,10 @@ i = i+2
         console.log(responseData.result);
 
         let tmp = [];
+        for(i=0;i<responseData.result.length;i++)
+        {
+          responseData.result[i].category = "HandBags";
+        }
         //tmp[0] = responseData.result[0];
         for (i = 1; i < responseData.result.length + 1; i++) {
           j = 1;
@@ -254,20 +318,30 @@ i = i+2
     });
   }
 
-  getAllBelts() {
-    this.items = [[]];
-
+  getAllBelts(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllBelts().subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Belts";
+        if(empArray==0)
+        {
+          this.headerTitle = "Belts";
+
+        }
 
 
         let i = 0;
         let j = 0;
         console.log(responseData.result);
-
+        for(i=0;i<responseData.result.length;i++)
+        {
+         // console.log(responseData.result[i]);
+         responseData.result[i].category = "Belts";
+        }
         let tmp = [];
         //tmp[0] = responseData.result[0];
         for (i = 1; i < responseData.result.length + 1; i++) {
@@ -294,14 +368,75 @@ i = i+2
     });
   }
 
-  getAllGloves() {
-    this.items = [[]];
-
+  getAllGloves(empArray) {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
     this.productService.getAllGloves().subscribe(responseData => {
-      if (responseData.message == 0) {
+      if (responseData.message == 0 && empArray==0) {
         this.headerTitle = "Stock is empty";
       } else {
-        this.headerTitle = "Gloves";
+        if(empArray==0)
+        {
+          this.headerTitle = "Gloves";
+
+        }
+
+
+
+        let i = 0;
+        let j = 0;
+        console.log(responseData.result);
+
+        let tmp = [];
+        for(i=0;i<responseData.result.length;i++)
+        {
+          //console.log(responseData.result[i]);
+         responseData.result[i].category = "Gloves";
+         //console.log(responseData.result[i]);
+
+        }
+        //tmp[0] = responseData.result[0];
+        for (i = 1; i < responseData.result.length + 1; i++) {
+          j = 1;
+
+          if (i % 3 != 0) {
+            tmp.push(responseData.result[i - 1]);
+            console.log(tmp);
+          } else {
+            tmp.push(responseData.result[i - 1]);
+            this.items.push(tmp);
+            tmp = [];
+          }
+        }
+        if (tmp.length > 0) {
+          this.items.push(tmp);
+        }
+        if (i == responseData.result.length + 1) {
+          this.display = true;
+        }
+      }
+
+      console.log(this.display);
+    });
+  }
+
+  getAllProducts(empArray)
+  {
+    if(empArray==0)
+    {
+      this.items = [[]];
+    }
+    this.productService.getAllProducts().subscribe(responseData => {
+      if (responseData.message == 0 && empArray==0) {
+        this.headerTitle = "Stock is empty";
+      } else {
+        if(empArray==0)
+        {
+          this.headerTitle = "Shirts Trousers Accessories";
+
+        }
 
 
         let i = 0;
