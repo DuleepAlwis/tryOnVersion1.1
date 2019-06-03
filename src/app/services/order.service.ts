@@ -19,6 +19,7 @@ export class OrderService {
 
   getOrder(id:string)
   {
+    console.log(id);
     return this.http.post<{message:Number,result:Orders}>(this.url+"/api/order/getOrder",{id:id});
   }
 

@@ -1,0 +1,5 @@
+<app-receptionist-navigation></app-receptionist-navigation>
+<h1 style="text-align:center">Edit Product Details</h1>
+<app-men-suits-form *ngIf="this.clothes" [productId]="this.productId" [type]="this.type"></app-men-suits-form>
+<app-tights-form *ngIf="this.tights" [productId]="this.productId" [type]="this.type"></app-tights-form>
+<app-accessories-form *ngIf="this.accessories" [productId]="this.productId" [type]="this.type" [category]="this.category"></app-accessories-form>
