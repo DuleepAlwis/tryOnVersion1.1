@@ -169,10 +169,10 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  setQuantity(maxNumber: Number) {
+  setQuantity(maxNumber) {
     let i = 0;
 // tslint:disable-next-line: radix
-    for (i = 1; i < (maxNumber + Number(1)); i++) {
+    for (i = 1; i < (maxNumber +1); i++) {
       this.quantityArr.push(i);
     }
   }

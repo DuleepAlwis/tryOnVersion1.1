@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -64,10 +65,22 @@ export class LoginComponent implements OnInit {
         .sendCode(this.form.get("email").value)
         .subscribe(responseData => {
           if (responseData.message == 0) {
-            alert("Invalid Email");
+            //alert("Invalid Email");
+            Swal.fire({
+              type: 'error',
+              title: 'oops...',
+              text: 'Login credentials inValid',
+              //footer: '<a href>Why do I have this issue?</a>'
+            });
             //Swal.fire("Good job!", "You clicked the button!", "success");
           } else {
-            alert("Email sent successfully");
+            Swal.fire({
+              type: 'success',
+              title: 'Email sent',
+              text: 'Please check',
+              //footer: '<a href>Why do I have this issue?</a>'
+            })
+            //alert("Email sent successfully");
             this.passwordForgot = false;
           }
           console.log(responseData);

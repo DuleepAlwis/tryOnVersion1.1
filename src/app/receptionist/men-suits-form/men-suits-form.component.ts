@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Cloth } from 'src/app/modules/Cloth';
 import { mimeType } from '../cloth-edit/mime-type.validator';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-men-suits-form',

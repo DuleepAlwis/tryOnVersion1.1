@@ -4,6 +4,8 @@ import { Cloth } from "../modules/Cloth";
 import { Tights } from '../modules/Tights';
 
 import { Accessories } from "../modules/Accessories";
+import Swal from 'sweetalert2';
+
 import {
   HttpClient,
   HttpParams,
@@ -28,10 +30,20 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+          //alert("Something wrong");
+          Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong ...Item did not added to stock',
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         } else {
-          alert("Success!!!");
-        }
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });        }
       });
   }
 
@@ -43,10 +55,20 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+         Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not added to stock',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
-        }
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });        }
       });
   }
 
@@ -58,9 +80,21 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+          //alert("Something wrong");
+          Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong ...Item did not added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -73,9 +107,21 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+         Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not added to stock',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -88,9 +134,21 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+        //  alert("Something wrong");
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not added to stock'
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -103,9 +161,21 @@ export class ProductService {
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+         Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not added to stock',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Product',
+            text: 'Item added to stock'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -175,10 +245,21 @@ getAllProducts()
       })
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
-        } else {
-          alert("Success!!!");
-        }
+          // alert("Something wrong");
+          Swal.fire({
+           type: 'error',
+           title: 'Oops...',
+           text: 'Something went wrong ...Item did not updated'
+           //footer: '<a href>Why do I have this issue?</a>'
+         });
+         } else {
+           Swal.fire({
+             type: 'success',
+             title: 'Updated',
+             text: 'Product data updated success'
+             //footer: '<a href>Why do I have this issue?</a>'
+           });
+              }
       });
   }
 
@@ -194,7 +275,13 @@ getAllProducts()
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+          //alert("Something wrong");
+          Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong ...Item did not updated'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         } else {
           alert("Success!!!");
         }
@@ -225,10 +312,20 @@ getAllProducts()
       })
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+         Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not updated'
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
-        }
+          Swal.fire({
+            type: 'success',
+            title: 'Updated',
+            text: 'Product data updated success'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });        }
       });
   }
 
@@ -244,9 +341,20 @@ getAllProducts()
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+          Swal.fire({
+            type: 'error',
+            title: 'Unsuccess',
+            text: 'Image not saved'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Saved',
+            text: 'Image saved'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -298,9 +406,21 @@ getAllProducts()
       })
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+         Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not updated',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Updated',
+            text: 'Item details updated',
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }
@@ -325,9 +445,22 @@ getAllProducts()
       )
       .subscribe(responseData => {
         if (responseData.message == 0) {
-          alert("Something wrong");
+         // alert("Something wrong");
+
+          Swal.fire({
+            type: 'error',
+            title: 'Unsuccess',
+            text: 'Image not saved'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         } else {
-          alert("Success!!!");
+          //alert("Success!!!");
+          Swal.fire({
+            type: 'success',
+            title: 'Saved',
+            text: 'Image saved'
+            //footer: '<a href>Why do I have this issue?</a>'
+          });
         }
       });
   }

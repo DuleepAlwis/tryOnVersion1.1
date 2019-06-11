@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-profile',
@@ -83,9 +84,21 @@ export class CustomerProfileComponent implements OnInit {
         .updateProfile(this.authService.getUserId(), customer)
         .subscribe(responseData => {
           if (responseData.message == 0) {
-            alert("Something wrong.......");
+            //alert("Something wrong.......");
+            Swal.fire({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              //footer: '<a href>Why do I have this issue?</a>'
+            });
           } else {
-            alert("Profile updated successfully.......");
+            //alert("Profile updated successfully.......");
+            Swal.fire({
+              type: 'success',
+              title: 'Saved',
+              text: 'Profile updated success',
+              //footer: '<a href>Why do I have this issue?</a>'
+            })
             // console.log(responseData);
             this.form.patchValue({
               name: responseData.result.name,
