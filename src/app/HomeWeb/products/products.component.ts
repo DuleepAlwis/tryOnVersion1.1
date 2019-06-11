@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
   getAllShorts(empArray) {
     if(empArray==0)
     {
-      this.items = [[]];
+      this.items = [];
     }
     this.productService.getAllTights("Shorts").subscribe(responseData => {
       if (responseData.message == 0 && empArray==0) {
@@ -81,7 +81,7 @@ export class ProductsComponent implements OnInit {
   getAllTrousers(empArray) {
     if(empArray==0)
     {
-      this.items = [[]];
+      this.items = [];
     }
     this.productService.getAllTights("Trousers").subscribe(responseData => {
       if (responseData.message == 0 && empArray==0) {
@@ -170,7 +170,7 @@ i = i+2
   getAllShirts(empArray) {
     if(empArray==0)
     {
-      this.items = [[]];
+      this.items = [];
     }
     this.productService.getAllClothes().subscribe(responseData => {
       if (responseData.message == 0 && empArray==0) {
@@ -222,7 +222,7 @@ i = i+2
   getAllCaps(empArray) {
     if(empArray==0)
     {
-      this.items = [[]];
+      this.items = [];
     }
     this.productService.getAllCaps().subscribe(responseData => {
       if (responseData.message == 0 && empArray==0) {
@@ -249,12 +249,32 @@ i = i+2
 
           if (i % 3 != 0) {
             tmp.push(responseData.result[i - 1]);
+            console.log("Tmp1");
+
             console.log(tmp);
+            console.log("items1");
+
+            console.log(this.items);
+
           } else {
-            tmp.push(responseData.result[i - 1]);
+            if(responseData.result[i - 1])
+            {
+              tmp.push(responseData.result[i - 1]);
+
+            }
             this.items.push(tmp);
+            console.log("Tmp");
+
+            console.log(tmp);
+            console.log("items");
+
+            console.log(this.items);
             tmp = [];
           }
+        }
+        if(tmp.length>0)
+        {
+          this.items.push(tmp);
         }
         console.log(this.items);
         if (i == responseData.result.length + 1) {

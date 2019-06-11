@@ -8,7 +8,8 @@ export const mimeType = (
   const frObs = Observable.create(
     (observer: Observer<{ [key: string]: any }>) => {
       fileReader.addEventListener("loadend", () => {
-        const arr = new Uint8Array((fileReader.result)).subarray(0, 4);
+        const length = fileReader.result.toString().length;
+        const arr = new Uint8Array(((fileReader.result).slice(0,length))).subarray(0, 4);
         let header = "";
         let isValid = false;
         let i = 0;
@@ -50,4 +51,5 @@ export const mimeType = (
     }
   );
   return frObs;
-};
+  };
+

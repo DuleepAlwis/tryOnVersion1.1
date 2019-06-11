@@ -25,7 +25,23 @@ import { OrdersComponent } from './HomeWeb/orders/orders.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
 import { CustomerModule } from './HomeWeb/customer/customer.module';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("Facebook-App-Id")
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -48,11 +64,16 @@ BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     ReceptionistModule,
-    CustomerModule
+    CustomerModule,
+    SocialLoginModule
+
 
   ],
   providers: [AuthGuardService,AuthInterceptorService,AuthService,CustomerService,OrderService,ProductService,SearchProductService,
-  ShoppingCartService, {provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],
+  ShoppingCartService, {
+    provide: AuthServiceConfig,
+    useFactory: provideConfig
+  },{provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

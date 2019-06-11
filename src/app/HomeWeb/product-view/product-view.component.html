@@ -6,7 +6,7 @@
             <h1 style="text-align: center">Product Description</h1>
 
             <h3>{{ this.item[0].name }}</h3>
-            <table class="table table-bordered rounded" *ngIf="this.clothes" style="background-color:LightBlue">
+            <table class="table table-bordered bg-light rounded" *ngIf="this.clothes">
                 <h5><b>Measurements</b></h5>
                 <tr>
                     <th>#</th>
@@ -155,7 +155,7 @@
 
                 </tr>
             </table>
-            <table class="table table-bordered rounded" *ngIf="this.trousers" style="background-color:LightBlue">
+            <table class="table table-bordered bg-light rounded" *ngIf="this.trousers">
                 <h5><b>Measurements</b></h5>
                 <tr>
                     <th>#</th>
@@ -300,7 +300,7 @@
 
                 </tr>
             </table>
-            <table class="table table-bordered rounded" *ngIf="this.accessories" style="background-color:LightBlue;color:black;padding: 7px">
+            <table class="table table-bordered bg-light rounded" *ngIf="this.accessories" style="background-color:LightBlue;color:black;padding: 7px">
                 <h5><b>Measurements</b></h5>
                 <div class="form-row">
                     <div class="form-group col-md-3">
