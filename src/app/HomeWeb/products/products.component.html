@@ -4,7 +4,7 @@
         <div class="col-md-3">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <button class="btn btn-outline-info" (click)="getAllShirts()">
+                    <button class="btn btn-outline-info" (click)="getAllShirts(0)">
                       <i class="fas fa-tshirt"></i>Shirts
                   </button>
                     <!-- <div class="dropdown">
@@ -19,12 +19,12 @@
         </div> -->
                 </li>
                 <li class="list-group-item">
-                    <button class="btn btn-outline-info" (click)="getAllShorts()">
+                    <button class="btn btn-outline-info" (click)="getAllShorts(0)">
                       <i class="fab fa-shirtsinbulk"></i>Shorts
                   </button>
                 </li>
                 <li class="list-group-item">
-                    <button class="btn btn-outline-info" (click)="getAllTrousers()">
+                    <button class="btn btn-outline-info" (click)="getAllTrousers(0)">
                       <i class="fab fa-shirtsinbulk"></i>Trousers
                   </button>
                 </li>
@@ -46,16 +46,16 @@
                           <i class="fas fa-briefcase"></i> Accessories products
                       </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                            <a class="dropdown-item" (click)="getAllBelts()">
+                            <a class="dropdown-item" (click)="getAllBelts(0)">
                                 <i class="fas fa-bacon"></i> Belts
                             </a>
-                            <a class="dropdown-item" (click)="getAllHandBags()">
+                            <a class="dropdown-item" (click)="getAllHandBags(0)">
                                 <i class="fas fa-shopping-bag"></i>Hand bags
                             </a>
-                            <a class="dropdown-item" (click)="getAllCaps()">
+                            <a class="dropdown-item" (click)="getAllCaps(0)">
                                 <i class="fab fa-redhat"></i> Caps
                             </a>
-                            <a class="dropdown-item" (click)="getAllGloves()">
+                            <a class="dropdown-item" (click)="getAllGloves(0)">
                                 <i class="fas fa-mitten"></i> Gloves
                             </a>
 
@@ -82,7 +82,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{product.name}}</h5>
                                         <p class="ml-5 mr-5 mt-3">
-                                            <a [routerLink]="['/productview',this.headerTitle,product._id]" class="btn btn-primary" stlye="margin-left:77px">
+                                            <a [routerLink]="['/productview',product.category,product._id]" class="btn btn-primary" stlye="margin-left:77px">
                                           View
                                       </a>
                                         </p>

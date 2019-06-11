@@ -20,11 +20,12 @@ import { RegisterComponent } from './HomeWeb/register/register.component';
 import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-credentials.component';
 import { ProductsComponent } from './HomeWeb/products/products.component';
 import { ProductViewComponent } from './HomeWeb/product-view/product-view.component';
-import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.component';
 import { ReceptionistModule } from './receptionist/receptionist-products/receptionist.module';
 import { OrdersComponent } from './HomeWeb/orders/orders.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
+import { CustomerModule } from './HomeWeb/customer/customer.module';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +37,6 @@ import { OrderDetailsComponent } from './common/order-details/order-details.comp
     ResetCredentialsComponent,
     ProductsComponent,
     ProductViewComponent,
-    ShoppingCartComponent,
     OrdersComponent,
     CustomerOrdersComponent,
     OrderDetailsComponent
@@ -47,7 +47,8 @@ BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    ReceptionistModule
+    ReceptionistModule,
+    CustomerModule
 
   ],
   providers: [AuthGuardService,AuthInterceptorService,AuthService,CustomerService,OrderService,ProductService,SearchProductService,

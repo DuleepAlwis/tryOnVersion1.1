@@ -152,6 +152,14 @@ export class ProductService {
     );
   }
 
+getAllProducts()
+{
+  return this.http.post<{ message: Number; result: Array<Object> }>(
+    this.url + "/api/clothes/getAllTights",
+    {}
+  );
+}
+
   getCloth(id: string, category: string) {
     return this.http.post<{ message: Number; result: Cloth }>(
       this.url + "/api/clothes/getCloth",
