@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from './../../services/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-receprionist-products-edit',
@@ -184,13 +185,25 @@ export class ReceprionistProductsEditComponent implements OnInit {
     this.ProductService.removeProduct(this.item,this.itemObjects[id]._id).subscribe(responseData => {
       if(responseData.message==0)
       {
-        alert("Something wrong");
+        //alert("Something wrong");
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong ...Item did not removed',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
       }
       else
       {
         //console.log(this.itemObjects.splice(id,1));
         this.itemObjects.splice(parseInt(id),1);
-        alert("Product removed");
+        //alert("Product removed");
+        Swal.fire({
+          type: 'success',
+          title: 'Product',
+          text: 'Removed success',
+          //footer: '<a href>Why do I have this issue?</a>'
+        });
       }
     });
   }

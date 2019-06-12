@@ -50,6 +50,10 @@ export class ShoppingCartComponent implements OnInit {
   quantity: string;
   displayBtn: boolean = false;
   email:string;
+  districts = ["Ampara", "Anuradhapura","Badulla","Batticaloa","Colombo","Galle","Gampaha",
+  "Hambantota","Jaffna", "Kalutara","Kandy", "Kegalle", "Kilinochchi", "Kurunegala", "Mannar", "Matale",
+  "Matara", "Moneragala", "Mullaitivu", "Nuwara Eliya", "Polonnaruwa", "Puttalam", "Ratnapura",
+  "Trincomalee", "Vavuniya"];
   formDelivery = new FormGroup({
     name: new FormControl("", [Validators.required]),
     address: new FormControl("", [Validators.required]),
@@ -165,10 +169,10 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  setQuantity(maxNumber: Number) {
+  setQuantity(maxNumber) {
     let i = 0;
 // tslint:disable-next-line: radix
-    for (i = 1; i < (maxNumber + Number(1)); i++) {
+    for (i = 1; i < (maxNumber +1); i++) {
       this.quantityArr.push(i);
     }
   }

@@ -23,13 +23,31 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-credentials.component';
 import { ProductsComponent } from './HomeWeb/products/products.component';
 import { ProductViewComponent } from './HomeWeb/product-view/product-view.component';
-import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.component';
 import { ReceptionistModule } from './receptionist/receptionist-products/receptionist.module';
 import { OrdersComponent } from './HomeWeb/orders/orders.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
+
 import { MenMeasurementsComponent } from './men-top-measurements/men-top-measurements.component';
 import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bottom-measurements.component';
+import { CustomerModule } from './HomeWeb/customer/customer.module';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("Facebook-App-Id")
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -41,7 +59,6 @@ import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bo
     ResetCredentialsComponent,
     ProductsComponent,
     ProductViewComponent,
-    ShoppingCartComponent,
     OrdersComponent,
     CustomerOrdersComponent,
     OrderDetailsComponent,
@@ -54,11 +71,17 @@ BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    ReceptionistModule
+    ReceptionistModule,
+    CustomerModule,
+    SocialLoginModule
+
 
   ],
   providers: [AuthGuardService,AuthInterceptorService,AuthService,CustomerService,OrderService,ProductService,SearchProductService,
-  ShoppingCartService, {provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],
+  ShoppingCartService, {
+    provide: AuthServiceConfig,
+    useFactory: provideConfig
+  },{provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
