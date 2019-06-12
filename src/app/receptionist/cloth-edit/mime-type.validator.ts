@@ -8,14 +8,15 @@ export const mimeType = (
   const frObs = Observable.create(
     (observer: Observer<{ [key: string]: any }>) => {
       fileReader.addEventListener("loadend", () => {
+        // const arr = new Uint8Array((fileReader.result)).subarray(0, 4);
         const length = fileReader.result.toString().length;
         const arr = new Uint8Array(((fileReader.result).slice(0,length))).subarray(0, 4);
         let header = "";
         let isValid = false;
-        let i = 0;
-        for (i = 0; i < arr.length; i++) {
-          header = header + arr[i].toString(16);
-        }
+        let i = 0; 
+        // for (i = 0; i < arr.length; i++) {
+        //   header = header + arr[i].toString(16);
+        // }
 
         switch (header) {
           case "89504E47":

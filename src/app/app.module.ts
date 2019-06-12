@@ -14,9 +14,12 @@ import { ProductService } from './services/product.service';
 import { SearchProductService } from './services/search-product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './HomeWeb/login/login.component';
-import { RegisterComponent } from './HomeWeb/register/register.component';
+// import { LoginComponent } from './HomeWeb/login/login.component';
+// import { RegisterComponent } from './HomeWeb/register/register.component';
 import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-credentials.component';
 import { ProductsComponent } from './HomeWeb/products/products.component';
 import { ProductViewComponent } from './HomeWeb/product-view/product-view.component';
@@ -24,6 +27,9 @@ import { ReceptionistModule } from './receptionist/receptionist-products/recepti
 import { OrdersComponent } from './HomeWeb/orders/orders.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
+
+import { MenMeasurementsComponent } from './men-top-measurements/men-top-measurements.component';
+import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bottom-measurements.component';
 import { CustomerModule } from './HomeWeb/customer/customer.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
@@ -55,7 +61,9 @@ export function provideConfig() {
     ProductViewComponent,
     OrdersComponent,
     CustomerOrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    MenMeasurementsComponent,
+    MenBottomMeasurementsComponent
   ],
   imports: [
 BrowserModule,
