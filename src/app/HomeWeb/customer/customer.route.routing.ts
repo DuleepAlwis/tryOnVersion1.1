@@ -8,6 +8,9 @@ import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component'
 import { AuthGuardService } from './../../services/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { ProductsComponent } from '../products/products.component';
+import { BottumMeasurementComponent } from '../bottum-measurement/bottum-measurement.component';
+import { BottumMeasurementDetailsComponent } from '../bottum-measurement-details/bottum-measurement-details.component';
+import { TopMeasurementDetailsComponent } from '../top-measurement-details/top-measurement-details.component';
 
 const customerRoutes: Routes = [
 {
@@ -30,6 +33,16 @@ const customerRoutes: Routes = [
         path: 'CustomerSearchProduct',
         canActivate: [AuthGuardService]
       },
+      {
+        component:BottumMeasurementDetailsComponent,
+        path:'CustomerBottumMeasurement',
+        canActivate:[AuthGuardService]
+      },
+      {
+        component:TopMeasurementDetailsComponent,
+        path:'CustomerTopMeasurement',
+        canActivate:[AuthGuardService]
+      },
   /*{
     component : OrdersComponent,
     path : "Orderdetails",
@@ -50,7 +63,7 @@ const customerRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(customerRoutes)],
-  exports: [RouterModule],
+exports: [RouterModule],
   providers: [AuthGuardService]
 })
 export class CustomerRoutesModule {}

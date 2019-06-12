@@ -1,8 +1,11 @@
 <app-home-naviation></app-home-naviation>
+
 <div class="row bg-light">
+
     <div class="col-md-3"></div>
     <div class="col-md-4" *ngIf="!this.passwordForgot">
-        <h1 style="text-align: center">Login</h1>
+
+        <h1 style="text-align: center"><img src="../../../../assets/img/logo.png " style="width:55px;height:55px">Login</h1>
         <div style="border:outset;border-color:darkcyan;background-color:antiquewhite;padding: 7px">
             <form [formGroup]="form" (submit)="login()">
                 <div class="form-group">
@@ -50,6 +53,9 @@
     </div>
 
     <div class="col-md-4" *ngIf="this.passwordForgot">
+        <div class="logo">
+            <a routerLink="/"><img src="../../../../assets/img/logo.png "></a>
+        </div>
         <h1 style="text-align: center">Password Forgot</h1>
         <div style="border:outset;border-color:darkcyan;background-color:antiquewhite;padding: 7px">
             <form [formGroup]="form" (submit)="login()">

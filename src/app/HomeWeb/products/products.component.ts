@@ -14,9 +14,7 @@ export class ProductsComponent implements OnInit {
   items = [[]];
   display = false;
   headerTitle = "";
-  constructor(private productService: ProductService) {}
-
-  ngOnInit() {
+  constructor(private productService: ProductService) {
     this.items = [[]];
     this.getAllBelts(1);
     this.getAllCaps(1);
@@ -26,6 +24,10 @@ export class ProductsComponent implements OnInit {
     this.getAllShorts(1);
     this.getAllTrousers(1);
     this.headerTitle = "Shirts Shorts Trousers Accessories"
+  }
+
+  ngOnInit() {
+
   }
 
   getAllShorts(empArray) {

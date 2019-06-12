@@ -28,6 +28,8 @@ export class RegisterComponent implements OnInit {
   "Hambantota","Jaffna", "Kalutara","Kandy", "Kegalle", "Kilinochchi", "Kurunegala", "Mannar", "Matale",
   "Matara", "Moneragala", "Mullaitivu", "Nuwara Eliya", "Polonnaruwa", "Puttalam", "Ratnapura",
   "Trincomalee", "Vavuniya"];
+
+  strength:string;
   constructor(private authService: AuthService) {}
 
   ngOnInit() {}
@@ -82,5 +84,24 @@ export class RegisterComponent implements OnInit {
       this.authService.signup(customer);
     }
   }
+
+  passwordChanged() {
+    console.log("AAA");
+    var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+    var pwd = this.form.get("password");
+    if (pwd.value.length==0) {
+    this.strength = "Type Password";
+    } else if (false == enoughRegex.test(pwd.value)) {
+    this.strength = "More Characters";
+    } else if (strongRegex.test(pwd.value)) {
+    this.strength = "Strong!";
+    } else if (mediumRegex.test(pwd.value)) {
+    this.strength = "Medium!";
+    } else {
+    this.strength = "Weak!";
+    }
+    }
 
 }

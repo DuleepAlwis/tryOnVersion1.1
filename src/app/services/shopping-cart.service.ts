@@ -86,9 +86,9 @@ export class ShoppingCartService {
 
   addToLocalStorage() {
     let itemString = [];
-    if (localStorage.getItem("items") != null) {
+   /* if (localStorage.getItem("items") != null) {
       localStorage.removeItem("items");
-    }
+    }*/
     let i = 0;
     for (i = 0; i < this.items.length; i++) {
       itemString.push(JSON.stringify(this.items[i]));
@@ -103,7 +103,7 @@ export class ShoppingCartService {
 
   setTotalPrice(totalPrice:string)
   {
-    localStorage.removeItem("totalPrice");
+   localStorage.removeItem("totalPrice");
 
     localStorage.setItem("totalPrice", totalPrice);
     this.totalPrice = totalPrice;
@@ -176,16 +176,16 @@ export class ShoppingCartService {
 
   clearLocalStorage() {
     let i = 0;
-    //console.log("Shopping cart" + " " + localStorage.length);
+    console.log("Shopping cart" + " " + localStorage.length);
     console.log(localStorage);
-    localStorage.removeItem("items");
+  localStorage.removeItem("items");
     localStorage.removeItem("tmpItem");
     localStorage.removeItem("totalPrice");
-    /*for (i = 0; i < localStorage.length + 1; i++) {
+  for (i = 0; i < localStorage.length + 1; i++) {
       console.log(localStorage.key(i));
       localStorage.removeItem(localStorage.key(i));
-    }*/
-    console.log("LocalStoarage"+" "+localStorage.getItem("totalPrice"));
+    }
+    console.log("LocalStoarage"+" ");//+localStorage.getItem("totalPrice"));
     return true;
   }
 

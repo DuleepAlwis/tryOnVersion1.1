@@ -23,4 +23,10 @@ export class CustomerNavigationComponent implements OnInit {
   itemsCountShoppingCart() {
     return this.shoppingCartService.getItemsCount();
   }
+
+  getEmail()
+  {
+    //console.log(this.authService.getEmail());
+    return this.authService.getEmail();
+  }
 }

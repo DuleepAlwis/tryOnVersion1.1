@@ -1,6 +1,10 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './HomeWeb/home/home.component';
+//import { LoginComponent } from './auth/login/login.component';
+//import { RegisterComponent } from './auth/register/register.component';
+
+
 import { LoginComponent } from './HomeWeb/login/login.component';
 import { RegisterComponent } from './HomeWeb/register/register.component';
 import { ProductsComponent } from './HomeWeb/products/products.component';
@@ -9,12 +13,20 @@ import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.com
 import { AuthGuardService } from './services/auth-guard.service';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
+
+
+import { MenMeasurementsComponent } from './men-top-measurements/men-top-measurements.component';
+import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bottom-measurements.component';
+
 import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-credentials.component';
+
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'Register',component:RegisterComponent},
+  {path:'measurements',component:MenMeasurementsComponent},
+  {path:'measurements1',component:MenBottomMeasurementsComponent},
   {component: ProductsComponent, path: "Products"},
   {component: ProductViewComponent,path: "productview/:category/:id"},
   {
