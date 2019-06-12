@@ -13,11 +13,15 @@ import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.com
 import { AuthGuardService } from './services/auth-guard.service';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
+import { MenMeasurementsComponent } from './men-top-measurements/men-top-measurements.component';
+import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bottom-measurements.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:'measurements',component:MenMeasurementsComponent},
+  {path:'measurements1',component:MenBottomMeasurementsComponent},
   {component: ProductsComponent, path: "Products"},
   {component: ProductViewComponent,path: "productview/:category/:id"},
   {

@@ -28,6 +28,8 @@ import { ReceptionistModule } from './receptionist/receptionist-products/recepti
 import { OrdersComponent } from './HomeWeb/orders/orders.component';
 import { CustomerOrdersComponent } from './common/customer-orders/customer-orders.component';
 import { OrderDetailsComponent } from './common/order-details/order-details.component';
+import { MenMeasurementsComponent } from './men-top-measurements/men-top-measurements.component';
+import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bottom-measurements.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { OrderDetailsComponent } from './common/order-details/order-details.comp
     ShoppingCartComponent,
     OrdersComponent,
     CustomerOrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    MenMeasurementsComponent,
+    MenBottomMeasurementsComponent
   ],
   imports: [
 BrowserModule,

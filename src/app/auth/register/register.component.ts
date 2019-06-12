@@ -13,10 +13,11 @@ import { PasswordValidator } from 'src/app/validators';
 
 export class RegisterComponent implements OnInit {
 
+  form1:FormGroup;
 
-  ngOnInit() {}
+  ngOnInit() {this.createForm();}
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,private fb: FormBuilder) {}
    
   
   // matching passwords validation
@@ -28,47 +29,61 @@ export class RegisterComponent implements OnInit {
   });
 
   //user validation
-  form1 = new FormGroup({
+  createForm() {
+  this.form1 = this.fb.group({
     email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
-    firstName: new FormControl('',Validators.compose([Validators.required,Validators.pattern("[A-Za-z]*")])),
-    lastName: new FormControl('', Validators.compose([Validators.required,Validators.pattern("[A-Za-z]*")])),
-    gender: new FormControl('', [Validators.required]),
     password: new FormControl('',Validators.compose( [Validators.required,Validators.minLength(6)])),
-    confirmpassword:new FormControl(),
-    matching_passwords: this.matching_passwords_group,
-    terms: new FormControl(false, Validators.pattern('true'))
+    userName: new FormControl('',Validators.compose([Validators.required,Validators.pattern("[A-Za-z]*")])),
+    gender: new FormControl('', [Validators.required]),
+    // lastName: new FormControl('', Validators.compose([Validators.required,Validators.pattern("[A-Za-z]*")])),
+    // confirmpassword:new FormControl(),
+    // matching_passwords: this.matching_passwords_group,
+    // terms: new FormControl(false, Validators.pattern('true'))
   } );
 
-  firstNameInValid() {
-    return this.form1.get("firstName").invalid;
-  }
+}
+nameInValid() {
+  console.log(this.form1.get("name").invalid);
+  return this.form1.get("name").invalid;
+}
 
-  lastNameInValid() {
-    return this.form1.get("lastName").invalid;
-  }
+emailInValid() {
+  return this.form1.get("email").invalid;
+}
 
-  emailInValid() {
-    return this.form1.get("email").invalid;
-  }
+passwordInValid() {
+  return this.form1.get("password").invalid;
+}
 
-  passwordInValid() {
-    return this.form1.get("password").invalid;
-  }
  
-
   signup() {
     if (
-      !(this.firstNameInValid() && this.lastNameInValid() && this.emailInValid() && this.passwordInValid())
+      (this.nameInValid())
     ) {
       console.log(
-        this.form1.get("firstName").value + " " + this.form1.get("gender").value
+        this.form1.get("userName").value 
       );
+      alert("Something wrong with the name");
+    }
+    else if(this.passwordInValid())
+    {
+      alert("Something wrong with the password");
+
+    }
+    else if(this.emailInValid())
+    {
+      alert("Something wrong with the email");
+
+    }
+      else
+      {
+
       let customer: Customer = {
-          firstName: this.form1.get("firstName").value,
-          lastName: this.form1.get("lastName").value,
-          email: this.form1.get("email").value,
-          password: this.form1.get("password").value,
-          gender: this.form1.get("gender").value
+        email: this.form1.get("email").value,
+        password: this.form1.get("password").value,
+        userName: this.form1.get("userName").value,
+        gender: this.form1.get("gender").value
+    //     lastName: this.form1.get("lastName").value,
     //     address: this.form.get("address").value,
     //     city: this.form.get("city").value,
     //     district: this.form.get("district").value,
@@ -78,9 +93,9 @@ export class RegisterComponent implements OnInit {
       };
       console.log(customer);
       this.authService.signup(customer);
+    }
    }
       
    }
    
-
-  }
+  

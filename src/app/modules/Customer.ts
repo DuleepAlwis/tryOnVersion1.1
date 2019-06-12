@@ -1,7 +1,6 @@
 export interface Customer {
   email: string;
   password: string;
-  firstName: string;
-  lastName:string;
+  userName: string;
   gender: string;
 }

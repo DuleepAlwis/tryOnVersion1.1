@@ -2,7 +2,7 @@
   <div class="col-md-4"></div>
   <div class="col-md-4"> 
     <h3 style="text-align: center">
-      <b><i><span style="background-color:black;color: white">Register</span></i></b> and enjoy more Benefits!
+      <b><i><span style="background-color:black;color: white">Login</span></i></b> and enjoy the Benefits!
     </h3>
   </div>
 </div>
@@ -46,9 +46,13 @@
             class="help-block">This field is required</span> -->
         </div>
       </div>
-          
       <div class="form-row">
+        <a href="/register" routerLinkActive="active">Forgot your password? </a>
+      </div> 
+      <div class="form-row">
+        <div class="form-group col-md-6">
           <input type="submit" class="btn btn-primary mr-5" value="Login" [disabled]="!form.valid">
+        </div>
       </div> 
     </form> 
   </div>
