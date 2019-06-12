@@ -4,7 +4,7 @@
         <button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" *ngIf="this.getRole()=='H'">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav" *ngIf="this.getRole()=='H'">
             <ul class="navbar-nav mt-5" style="font-size: 25px">
                 <li class="nav-item">
                     <!--<a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>-->
@@ -76,7 +76,7 @@
 
         <!--Receptionist-->
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" *ngIf="this.getRole()=='R'">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav" *ngIf="this.getRole()=='R'">
             <ul class="navbar-nav mt-5" style="font-size: 25px">
                 <li class="nav-item">
                     <!--<a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>-->
@@ -113,7 +113,7 @@
 
         <!--Customer-->
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" *ngIf="this.getRole()=='C'">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav" *ngIf="this.getRole()=='C'">
             <ul class="navbar-nav mt-5" style="font-size: 25px">
                 <li class="nav-item">
                     <!--<a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>-->
@@ -135,6 +135,9 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item text-success" routerLink="/Orderdetails">Orders</a>
                         <a class="dropdown-item text-success" routerLink="/CustomerSearchProduct">Find Items</a>
+                        <a class="dropdown-item text-success" routerLink="/CustomerBottumMeasurement">Bottum Measurements</a>
+                        <a class="dropdown-item text-success" routerLink="/CustomerTopMeasurement">Top Measurements</a>
+
                         <a class="dropdown-item text-success" href=''>News later</a>
                     </div>
                 </li>
@@ -149,7 +152,8 @@
       </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user">                        <small>{{this.getEmail()}}</small>
+                        </i>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item text-success" [routerLink]="['/CustomerProfile']">Profile</a>
@@ -159,10 +163,10 @@
 
                     </div>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href=''><span style="display:inline-block;width:35px"></span></a>
 
-                </li>
+                </li>-->
                 <!--<li class="nav-item">
         <button type="button" class="btn btn-outline-info mr-3" data-toggle="modal" data-target="#exampleModal"><a
             class="nav-link" style="color:white">Login</a></button>

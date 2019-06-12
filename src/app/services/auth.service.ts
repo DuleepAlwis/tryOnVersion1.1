@@ -42,6 +42,8 @@ export class AuthService {
     });
     this.userId = localStorage.length>0 ? localStorage.getItem("id") : "";
     this.role  = localStorage.getItem("role")==null?"H": localStorage.getItem("role");
+    this.email = localStorage.length>0 ? localStorage.getItem("email") : "";
+
     //this.role = localStorage.length>0 ? localStorage.getItem("role") : "H";
     this.token = localStorage.length>0
       ? localStorage.getItem("token")
@@ -58,6 +60,7 @@ export class AuthService {
     localStorage.setItem("id", this.userId);
     localStorage.setItem("token", this.token);
     localStorage.setItem("role",this.role);
+    localStorage.setItem("email",email);
   }
 
   logout() {

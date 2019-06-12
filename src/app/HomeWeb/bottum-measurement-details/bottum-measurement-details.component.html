@@ -1,0 +1,69 @@
+<app-customer-navigation></app-customer-navigation>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <ul class="breadcrumb">
+            <li>Select your gender : </li>
+
+            <li><button class="btn btn-info ml-3" onclick="genderMale()">Male</button></li>
+            <li><button class="btn btn-info ml-3" onclick="genderFeMale()">Female</button></li>
+
+        </ul>
+        <div class="border-light" style="border: 8px" *ngIf="this.gender=='M'">
+            <form [formGroup]="formBottum" (submit)="bottumMeasurementSave()">
+                <div class="form-row">
+                    <label for="inputpWaist" style=color:#8fccc0 class="col-md-3 col-form-label">Pants Waist</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputpWaist" formControlName="MeasurementPantsW">
+                    </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <div class="form-row">
+                    <label for="inputHips" style=color:#fe3a35 class="col-md-3 col-form-label">Hips</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputHips" formControlName="MeasurementHips">
+                    </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <div class="form-row">
+                    <label for="inputpLength" style=color:#666 class="col-md-3 col-form-label">Pants Length</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputpLength" formControlName="MeasurementLength">
+                    </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <div class="form-row">
+                    <label for="inputcrotch" style=color:#2aa9de class="col-md-3 col-form-label">Crotch</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputcrotch" formControlName="MeasurementCrotch">
+                    </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <div class="form-row">
+                    <label for="inputthigh" style=color:#ff2851 class="col-md-3 col-form-label">Thigh</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputthigh" formControlName="MeasurementThigh"> </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <div class="form-row">
+                    <label for="inputknee" style=color:#5751d9 class="col-md-3 col-form-label">Knee</label>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="app-form__input app-form__select js-required p-b-0 error" id="inputknee" formControlName="MeasurementKnee"> </div>
+                    <div class="form-group col-md-1">cm</div>
+                    <button type="button" class="btn btn-inf " data-toggle="modal" data-target="#myModal1"><u>Help?</u></button>
+                </div>
+                <!-- <a routerLink="/measurements"><button class="btn btn-primary mr-5">Prev</button></a>-->
+                <input type="submit" class="btn btn-success" value="Save">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5" *ngIf="this.gender=='M'">
+        <img src="../../../assets/img/pants.png ">
+    </div>
+</div>

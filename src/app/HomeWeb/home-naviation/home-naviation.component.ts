@@ -48,4 +48,10 @@ export class HomeNaviationComponent implements OnInit {
     return this.shoppingCartService.getItemsCount();
   }
 
+  getEmail()
+  {
+    //console.log(this.authService.getEmail());
+    return this.authService.getEmail();
+  }
+
 }

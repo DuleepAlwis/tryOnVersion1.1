@@ -5,7 +5,7 @@
         <div class="col-md-7">
             <h1 style="text-align: center">Product Description</h1>
 
-            <h3>{{ this.item[0].name }}</h3>
+            <h3 *ngIf="this.clothes || this.trousers">{{ this.item[0].name }} || Price(Rs.) : {{ this.item[0].large.price }}</h3>
             <table class="table table-bordered bg-light rounded" *ngIf="this.clothes">
                 <h5><b>Measurements</b></h5>
                 <tr>
@@ -128,32 +128,32 @@
 
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td>Price</td>
-                    <!--  <td> Quantity : {{ this.item[0].small.quantity }}
-                    </td>-->
+                    <td> Quantity : {{ this.item[0].small.quantity }}
+                    </td>
                     <td>Price(Rs.) : {{ this.item[0].small.price }}
                     </td>
                     <td><span style="background-color: aqua;width:55px"></span></td>
 
 
-                    <!-- <td> Quantity : {{ this.item[0].medium.quantity }}
-                    </td>-->
+                    <td> Quantity : {{ this.item[0].medium.quantity }}
+                    </td>
                     <td> Price(Rs.) : {{ this.item[0].medium.price }}
                     </td>
                     <td><span style="background-color: aqua;width:55px"></span></td>
 
 
-                    <!-- <td>
+                    <td>
                         Quantity : {{ this.item[0].large.price }}
 
-                    </td>-->
+                    </td>
 
                     <td>Price(Rs.) : {{ this.item[0].large.price }}
                     </td>
                     <td><span style="background-color: aqua;width:55px"></span></td>
 
-                </tr>
+                </tr>-->
             </table>
             <table class="table table-bordered bg-light rounded" *ngIf="this.trousers">
                 <h5><b>Measurements</b></h5>
@@ -277,29 +277,31 @@
 
                 </tr>
 
-                <tr>
+                <!--<tr>
                     <td>Price</td>
-                    <!-- <td> Quantity : {{ this.item[0].small.quantity }}
-                    </td>-->
+                    <td> Quantity : {{ this.item[0].small.quantity }}
+                    </td>
                     <td>Price(Rs.) :
                     </td>
                     <td>{{ this.item[0].small.price }}</td>
-                    <!-- <td> Quantity : {{ this.item[0].medium.quantity }}
-                    </td>-->
+                    <td> Quantity : {{ this.item[0].medium.quantity }}
+                    </td>
                     <td> Price(Rs.) :
                     </td>
                     <td> {{ this.item[0].medium.price }}</td>
 
-                    <!--<td>
+                   <td>
                         Quantity : {{ this.item[0].large.price }}
 
-                    </td>-->
+                    </td>
                     <td>Price(Rs.) :
                     </td>
                     <td>{{ this.item[0].large.price }}</td>
 
-                </tr>
+                </tr>-->
             </table>
+            <h3 *ngIf="this.accessories">{{ this.item[0].name }}</h3>
+
             <table class="table table-bordered bg-light rounded" *ngIf="this.accessories" style="background-color:LightBlue;color:black;padding: 7px">
                 <h5><b>Measurements</b></h5>
                 <div class="form-row">

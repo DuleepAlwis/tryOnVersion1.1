@@ -6,17 +6,23 @@ import { CustomerSearchProductComponent } from '../customer-search-product/custo
 import { CustomerRoutesModule } from './customer.route.routing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
+import { BottumMeasurementComponent } from '../bottum-measurement/bottum-measurement.component';
+import { BottumMeasurementDetailsComponent } from '../bottum-measurement-details/bottum-measurement-details.component';
+import { TopMeasurementDetailsComponent } from '../top-measurement-details/top-measurement-details.component';
 
 @NgModule({
   declarations: [
     CustomerNavigationComponent,
     CustomerProfileComponent,
     CustomerSearchProductComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    BottumMeasurementComponent,
+    BottumMeasurementDetailsComponent,
+    TopMeasurementDetailsComponent
 
   ],
   imports: [
-  CommonModule,
+CommonModule,
     CustomerRoutesModule,
     ReactiveFormsModule
   ]

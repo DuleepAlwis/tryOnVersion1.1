@@ -14,7 +14,7 @@
                 <label for="inputEmail4">Description</label>
                 <input type="text" class="form-control mb-3" id="inputEmail4" placeholder="" formControlName="name">
 
-                <table class="table table-bordered text-black rounded" style="background-color:LightBlue">
+                <table class="table table-bordered text-black rounded" style="background-color: blanchedalmond">
                     <h5><b>Measurements</b></h5>
                     <tr>
                         <th>#</th>
@@ -23,7 +23,7 @@
                         <th colspan="2" class="text-center">Large</th>
                     </tr>
                     <tr>
-                        <td>Neck</td>
+                        <td style="color:#999">Neck</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSNeck1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSNeck2" value="0">
@@ -41,7 +41,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#8fccc0">
                         <td>Shoulder Width</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSShoulderW1" value="0">
                         </td>
@@ -60,7 +60,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#44db5e">
                         <td>Biceps</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSBicep1" value="0">
                         </td>
@@ -79,7 +79,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#5751d9">
                         <td>Jacket Length</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSJacketL1" value="0">
                         </td>
@@ -98,7 +98,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#5751d9">
                         <td>Sleeve Length</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSSleeveL1" value="0">
                         </td>
@@ -117,7 +117,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#ff2851">
                         <td>Chest</td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSChest1" value="0">
                         </td>
@@ -136,7 +136,7 @@
 
                     </tr>
 
-                    <tr>
+                    <tr style="color:#ff9500">
                         <td>Quantity & Price</td>
                         <td> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementSQ" value="0">
                         </td>
@@ -176,6 +176,8 @@
             </form>
         </div>
         <div class="col-md-3">
+            <img src="../../../assets/img/jacket.png" *ngIf="this.newProduct">
+
             <div style="border:inset;border-width: 7px;width:300px;height:350px" *ngIf="!this.newProduct">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">

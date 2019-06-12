@@ -1,12 +1,12 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './HomeWeb/home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+//import { LoginComponent } from './auth/login/login.component';
+//import { RegisterComponent } from './auth/register/register.component';
 
 
-// import { LoginComponent } from './HomeWeb/login/login.component';
-// import { RegisterComponent } from './HomeWeb/register/register.component';
+import { LoginComponent } from './HomeWeb/login/login.component';
+import { RegisterComponent } from './HomeWeb/register/register.component';
 import { ProductsComponent } from './HomeWeb/products/products.component';
 import { ProductViewComponent } from './HomeWeb/product-view/product-view.component';
 import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.component';
@@ -24,7 +24,7 @@ import { ResetCredentialsComponent } from './HomeWeb/reset-credentials/reset-cre
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'Register',component:RegisterComponent},
   {path:'measurements',component:MenMeasurementsComponent},
   {path:'measurements1',component:MenBottomMeasurementsComponent},
   {component: ProductsComponent, path: "Products"},
