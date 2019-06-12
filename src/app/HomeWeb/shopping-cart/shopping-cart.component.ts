@@ -288,7 +288,7 @@ export class ShoppingCartComponent implements OnInit {
       });
   }
   removeItem(index) {
-    this.totalPrice = String(Number(this.totalPrice) - Number(this.shoppingCartService.items[index].price));
+    this.totalPrice = String(Number(this.totalPrice) - Number(this.shoppingCartService.items[index].price)*Number(this.shoppingCartService.items[index].quantity));
     this.shoppingCartService.setTotalPrice(this.totalPrice);
     this.cartItems.splice(Number(index), 0);
     this.shoppingCartService.items.splice(Number(index), 1);
