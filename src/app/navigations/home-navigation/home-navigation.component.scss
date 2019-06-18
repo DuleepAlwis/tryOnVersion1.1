@@ -1,0 +1,21 @@
+.navigation-header {
+    height: 57px;
+    background-color: aliceblue;
+    color: black;
+}
+
+.menu-top>.list>a {
+    color: black;
+}
+
+.menu-top>.list>li:hover {
+    border-style: solid;
+    border-radius: 37px;
+    -webkit-border-radius: 37px;
+    -moz-border-radius: 37px;
+    -ms-border-radius: 37px;
+    -o-border-radius: 37px;
+    padding: 7px;
+    padding-left: 7px;
+    display: inline-block;
+}

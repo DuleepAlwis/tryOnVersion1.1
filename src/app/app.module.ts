@@ -33,6 +33,18 @@ import { MenBottomMeasurementsComponent } from './men-bottom-measurements/men-bo
 import { CustomerModule } from './HomeWeb/customer/customer.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { HomeNavigationComponent } from './navigations/home-navigation/home-navigation.component';
+import { MenProductsComponent } from './HomeWeb/men-products/men-products.component';
+import { AccessoriesProductsComponent } from './HomeWeb/accessories-products/accessories-products.component';
+import { CustomerNavigationComponent } from './navigations/customer-navigation/customer-navigation.component';
+import { CustomerProfileComponent } from './HomeWeb/customer-profile/customer-profile.component';
+import { CustomerSearchProductComponent } from './HomeWeb/customer-search-product/customer-search-product.component';
+import { ShoppingCartComponent } from './HomeWeb/shopping-cart/shopping-cart.component';
+import { BottumMeasurementComponent } from './HomeWeb/bottum-measurement/bottum-measurement.component';
+import { BottumMeasurementDetailsComponent } from './HomeWeb/bottum-measurement-details/bottum-measurement-details.component';
+import { TopMeasurementDetailsComponent } from './HomeWeb/top-measurement-details/top-measurement-details.component';
+import { CustomerMeasurementComponent } from './HomeWeb/customer-measurement/customer-measurement.component';
+import { BillingPaymentComponent } from './HomeWeb/billing-payment/billing-payment.component';
 
 let config = new AuthServiceConfig([
   {
@@ -64,6 +76,19 @@ export function provideConfig() {
     OrderDetailsComponent,
     MenMeasurementsComponent,
     MenBottomMeasurementsComponent,
+    HomeNavigationComponent,
+    MenProductsComponent,
+    AccessoriesProductsComponent,
+    CustomerNavigationComponent,
+    CustomerProfileComponent,
+    CustomerSearchProductComponent,
+    ShoppingCartComponent,
+    BottumMeasurementComponent,
+    BottumMeasurementDetailsComponent,
+    TopMeasurementDetailsComponent,
+    CustomerMeasurementComponent,
+    BillingPaymentComponent
+
   ],
   imports: [
 BrowserModule,
@@ -72,7 +97,7 @@ BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     ReceptionistModule,
-    CustomerModule,
+    //CustomerModule,
     SocialLoginModule
 
 

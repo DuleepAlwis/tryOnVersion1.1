@@ -1,6 +1,26 @@
 <app-customer-navigation></app-customer-navigation>
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+            <div class="col-first">
+                <span class="btn-lg"><i class="fas fa-user-tie bg-dark"></i></span>
+                <h3>Profile Information</h3>
+                <nav class="d-flex align-items-center justify-content-start">
+                    <a routerLink="">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsMen">Men's<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsWomen">Women's<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsAccessories">Accessories<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="container-fluid bg-light">
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7 mt-1">
             <h3 style="text-align: center">
@@ -8,31 +28,35 @@
             </h3>
         </div>
         <div class="col-md-4"></div>
-    </div>
+    </div>-->
 
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-6">
-            <div class="border-light" style="border: 7px">
+            <div class="border-light text-dark" style="border: 7px;background-color: aqua;padding: 7px;border-radius: 7px">
                 <form [formGroup]="form" (submit)="update()">
                     <div class="form-row">
-                        <div class="form-group col-md-7">
-                            <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="inputName" formControlName="name" placeholder="Name">
+                        <div class="form-group col-md-3">
+                            <label for="inputName" style="color:black">First Name</label>
+                            <input type="text" class="form-control" id="inputName" formControlName="fname" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputName" style="color:black">Last Name</label>
+                            <input type="text" class="form-control" id="inputName" formControlName="lname" placeholder="Name">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="inputAddress">Address</label>
+                            <label for="inputAddress" style="color:black">Address</label>
                             <input type="type" class="form-control" id="inputAddress" formControlName="address" placeholder="11A,AAA Rd">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputCity">City</label>
+                            <label for="inputCity" style="color:black">City</label>
                             <input type="text" class="form-control" id="inputCity" formControlName="city" placeholder="City">
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputCity">District</label>
-                            <select class="form-control" id="inputDistrict" formControlName="district">
+                        <div class="form-group col-md-3">
+                            District
+                            <select class="form-control mt-4" id="inputDistrict" formControlName="district">
                             <option *ngFor="let district of this.districts">{{district}}</option>
                           </select>
                         </div>
@@ -40,22 +64,34 @@
                     <div class="form-row">
 
                         <div class="form-group col-md-4">
-                            <label for="inputMobile">Mobile Number</label>
+                            <label for="inputMobile" style="color:black">Mobile Number</label>
                             <input type="text" class="form-control" id="inputMobile" formControlName="mobileno" placeholder="0715896321">
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputGender">Gender</label>
-                            <select class="form-control" id="inputGender" formControlName="gender">
-              <option>Male</option>
+                            <label for="inputGender" style="color:black">Gender</label>
+                            <select class="form-control mt-4" id="inputGender" formControlName="gender">
+              <option selected="true">Male</option>
               <option>Female</option>
 
             </select>
                         </div>
                     </div>
 
+                    <div class="form-row">
+                        <div class="col-md-2"></div>
+                        <div class="form-group col-md-4">
+                            <input type="submit" class="btn btn-primary mr-5" value="Save">
 
-                    <input type="submit" class="btn btn-primary mr-5" value="Save">
-                    <input type="reset" class="btn btn-primary" value="Cancel">
+                        </div>
+                        <div class="col-md-2"></div>
+
+                        <div class="form-group col-md-2">
+                            <input type="reset" class="btn btn-primary" value="Cancel">
+
+                        </div>
+                    </div>
+
+
                 </form>
             </div>
         </div>

@@ -11,10 +11,12 @@ import { ProductsComponent } from '../products/products.component';
 import { BottumMeasurementComponent } from '../bottum-measurement/bottum-measurement.component';
 import { BottumMeasurementDetailsComponent } from '../bottum-measurement-details/bottum-measurement-details.component';
 import { TopMeasurementDetailsComponent } from '../top-measurement-details/top-measurement-details.component';
+import { MenProductsComponent } from '../men-products/men-products.component';
 
 const customerRoutes: Routes = [
 {
-  component:ProductsComponent,
+  //component:ProductsComponent,
+  component:MenProductsComponent,
   path:"Customer",
   canActivate:[AuthGuardService]
 },

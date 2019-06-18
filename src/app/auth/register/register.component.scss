@@ -1,14 +1,17 @@
 @import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-.logo{
-	width: 200px;
-	height: auto;
-	float: left;
+.logo {
+    width: 200px;
+    height: auto;
+    float: left;
 }
+
+
 /* Customize the label (the container) */
+
 .container {
     display: block;
-    position: relative;
+    position: static;
+    /*relative*/
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
@@ -17,17 +20,22 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
+
+
 /* Hide the browser's default checkbox */
+
 .container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
 
-  /* Create a custom checkbox */
+
+/* Create a custom checkbox */
+
 .checkmark {
     position: absolute;
     top: 0;
@@ -35,31 +43,42 @@
     height: 15px;
     width: 15px;
     background-color: #eee;
-  }
+}
+
+
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+
+.container:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
     background-color: black;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+}
+
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
+}
+
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
     left: 9px;
     top: 3px;
     width: 3px;
@@ -69,13 +88,13 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
-  input.ng-invalid.ng-touched{
-    border:1px solid red;
 }
 
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
 
-.help-block{
-  color:red;
-  font-size:12px;
+.help-block {
+    color: red;
+    font-size: 12px;
 }

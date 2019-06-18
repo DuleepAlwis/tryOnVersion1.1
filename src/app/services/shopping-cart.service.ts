@@ -35,6 +35,7 @@ export class ShoppingCartService {
   };
   totalPrice: string = "0";
   deliveryDetails: Object;
+  discount = "";
   constructor(private http: HttpClient) {
     this.items = localStorage.length>2 ? this.extractObjects(localStorage.getItem("items")): [];
     this.tmpItem =
@@ -67,9 +68,25 @@ export class ShoppingCartService {
   }
 
   setTmpItem(tmp: Products/*Object*/) {
-    this.tmpItem = tmp;
+   /* this.tmpItem = tmp;
     localStorage.setItem("tmpItem", JSON.stringify(tmp));
-    localStorage.setItem("totalPrice", this.totalPrice);
+    localStorage.setItem("totalPrice", this.totalPrice);*/
+    this.items.push({_id:tmp._id,name:tmp.name,price:tmp.price,quantity:"1",unitPrice:tmp.price});
+    this.totalPrice = this.calculateTotalPrice();
+    localStorage.setItem("totalPrice",this.totalPrice);
+    this.addToLocalStorage();
+  }
+
+  calculateTotalPrice()
+  {
+    let i = 0;
+    this.totalPrice = "0";
+    for(i=0;i<this.items.length;i++)
+    {
+      this.totalPrice = (parseInt(this.totalPrice)+parseInt(this.items[i].price)).toString();
+    }
+
+    return this.totalPrice;
   }
 
   addToShoppingCart(item: Object) {
@@ -85,6 +102,8 @@ export class ShoppingCartService {
   }
 
   addToLocalStorage() {
+    localStorage.setItem("totalPrice",this.totalPrice);
+
     let itemString = [];
    /* if (localStorage.getItem("items") != null) {
       localStorage.removeItem("items");
@@ -185,6 +204,8 @@ export class ShoppingCartService {
       console.log(localStorage.key(i));
       localStorage.removeItem(localStorage.key(i));
     }
+    this.items = [];
+    this.totalPrice = "0";
     console.log("LocalStoarage"+" ");//+localStorage.getItem("totalPrice"));
     return true;
   }
@@ -192,5 +213,11 @@ export class ShoppingCartService {
   clearCart() {
     this.items = [];
     this.tmpItem = this.defaultProduct;
+  }
+
+  calculateDiscount(discount)
+  {
+    this.discount = discount;
+    this.totalPrice = (parseFloat(this.totalPrice) - (parseFloat(this.totalPrice)*parseFloat(discount))/100).toString();
   }
 }

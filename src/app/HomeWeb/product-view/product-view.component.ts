@@ -160,10 +160,12 @@ export class ProductViewComponent implements OnInit {
     this.productService
       .getAccessories(this.id, this.category)
       .subscribe(responseData => {
+        console.log(responseData);
         if (responseData.message == 0) {
           this.errorMsg = "Not found";
         } else {
           this.item.push(responseData.result[0]);
+          console.log(this.item);
           this.loadImages();
         }
       });
@@ -207,5 +209,34 @@ export class ProductViewComponent implements OnInit {
     this.shoppingCartService.setTmpItem(this.item[0]);
     this.router.navigate(["/shoppingcart", this.category]);
   }
+
+  stockAvailable()
+  {
+    console.log(this.item[0].price);
+    if(this.category=='accessories')
+    {
+      if(this.item[0].quantity>0)
+      {
+        return "In Stock";
+      }
+      else
+      {
+        return "Not In Stock";
+      }
+
+    }
+    else
+    {
+      if((this.item[0].large.quantity+this.item[0].small.quantity+this.item[0].medium.quantity)>0)
+      {
+        return "In Stock";
+      }
+      else
+      {
+        return "Not In Stock";
+      }
+    }
+  }
+
 
 }

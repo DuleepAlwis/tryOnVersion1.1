@@ -50,6 +50,8 @@ export class ShoppingCartComponent implements OnInit {
   quantity: string;
   displayBtn: boolean = false;
   email:string;
+  sizeOfCloth = "";
+  coupenCode = "";
   districts = ["Ampara", "Anuradhapura","Badulla","Batticaloa","Colombo","Galle","Gampaha",
   "Hambantota","Jaffna", "Kalutara","Kandy", "Kegalle", "Kilinochchi", "Kurunegala", "Mannar", "Matale",
   "Matara", "Moneragala", "Mullaitivu", "Nuwara Eliya", "Polonnaruwa", "Puttalam", "Ratnapura",
@@ -75,12 +77,17 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
       this.category = params.get("category");
-      console.log(this.category);
-      this.totalPrice = this.shoppingCartService.totalPrice;
+     // console.log(this.category);
+      //alert(this.shoppingCartService.totalPrice);
+      this.totalPrice = parseFloat(this.shoppingCartService.totalPrice)>=0?this.shoppingCartService.totalPrice:"0";
       this.product = this.shoppingCartService.tmpItem;
       this.cartItems = this.shoppingCartService.items;
       this.displayBtn = false;
-      this.productView();
+      console.log(this.cartItems);
+      if(this.category!=='any')
+      {
+        this.productView();
+      }
     });
 
     this.customerService
@@ -226,7 +233,7 @@ export class ShoppingCartComponent implements OnInit {
 
   nameInvalid() {
     //console.log("Name"+" "+this.formDelivery.get("name").invalid);
-    return this.formDelivery.get("name").invalid;
+    return this.formDelivery.get("fname").invalid && this.formDelivery.get("lname").invalid;
   }
 
   addressInvalid() {
@@ -268,7 +275,7 @@ export class ShoppingCartComponent implements OnInit {
     }
     let deliveryDetails = {
       id: this.authService.getUserId(),
-      name: this.formDelivery.get("name").value,
+      name: this.formDelivery.get("fname").value + this.formDelivery.get("lname").value,
       address: this.formDelivery.get("address").value,
       city: this.formDelivery.get("city").value,
       district: this.formDelivery.get("district").value,
@@ -297,5 +304,53 @@ export class ShoppingCartComponent implements OnInit {
 
     localStorage.setItem("totalPrice", this.totalPrice);
   }
+
+
+  getShoppingCartCount()
+  {
+   return  this.shoppingCartService.getItemsCount();
+  }
+
+  /*------------------------------*/
+  increaseProductPrice(i)
+  {
+    this.cartItems[i].quantity = parseInt(this.cartItems[i].quantity)+1;
+    this.cartItems[i].price = parseInt(this.cartItems[i].unitPrice)*parseInt(this.cartItems[i].quantity);
+    this.shoppingCartService.items = this.cartItems;
+    this.totalPrice = this.shoppingCartService.calculateTotalPrice();
+this.shoppingCartService.addToLocalStorage();
+  }
+
+  decreaseProductPrice(i)
+  {
+    this.cartItems[i].quantity = parseInt(this.cartItems[i].quantity)-1;
+    this.cartItems[i].price = parseInt(this.cartItems[i].unitPrice)*parseInt(this.cartItems[i].quantity);
+    this.shoppingCartService.items = this.cartItems;
+    this.totalPrice = this.shoppingCartService.calculateTotalPrice();
+    this.shoppingCartService.addToLocalStorage();
+
+
+  }
+
+  removeProduct(index)
+  {
+    this.shoppingCartService.items = this.cartItems;
+    this.totalPrice = String(Number(this.totalPrice) - Number(this.shoppingCartService.items[index].price)*Number(this.shoppingCartService.items[index].quantity));
+    this.shoppingCartService.setTotalPrice(this.totalPrice);
+    this.cartItems.splice(Number(index), 0);
+    this.shoppingCartService.items.splice(Number(index), 1);
+   // localStorage.removeItem("items");
+    //localStorage.removeItem("totalPrice");
+
+    //localStorage.setItem("totalPrice", this.totalPrice);
+    this.totalPrice = this.shoppingCartService.calculateTotalPrice();
+    this.shoppingCartService.addToLocalStorage();
+  }
+
+  sendCoupen()
+  {
+
+  }
+
 
 }

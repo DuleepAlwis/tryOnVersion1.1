@@ -18,12 +18,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {this.createForm();}
 
   constructor(private authService: AuthService,private fb: FormBuilder) {}
-   
-  
+
+
   // matching passwords validation
    matching_passwords_group = new FormGroup({
     password: new FormControl('', Validators.compose([Validators.minLength(5), Validators.required])),
-    confirmpassword: new FormControl('', Validators.required)}, 
+    confirmpassword: new FormControl('', Validators.required)},
     (formGroup: FormGroup) => {
     return PasswordValidator.areEqual(formGroup);
   });
@@ -55,13 +55,13 @@ passwordInValid() {
   return this.form1.get("password").invalid;
 }
 
- 
+
   signup() {
     if (
       (this.nameInValid())
     ) {
       console.log(
-        this.form1.get("userName").value 
+        this.form1.get("userName").value
       );
       alert("Something wrong with the name");
     }
@@ -79,23 +79,24 @@ passwordInValid() {
       {
 
       let customer: Customer = {
+        name:"",
         email: this.form1.get("email").value,
         password: this.form1.get("password").value,
-        userName: this.form1.get("userName").value,
-        gender: this.form1.get("gender").value
+        //userName: this.form1.get("userName").value,
+        gender: this.form1.get("gender").value,
     //     lastName: this.form1.get("lastName").value,
-    //     address: this.form.get("address").value,
-    //     city: this.form.get("city").value,
-    //     district: this.form.get("district").value,
-    //     mobileno: this.form.get("mobileno").value,
-        
+        address: this.form1.get("address").value,
+         city: this.form1.get("city").value,
+         district: this.form1.get("district").value,
+         mobileno: this.form1.get("mobileno").value,
+
 
       };
       console.log(customer);
       this.authService.signup(customer);
     }
    }
-      
+
    }
-   
-  
+
+

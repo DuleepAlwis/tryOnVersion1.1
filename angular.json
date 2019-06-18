@@ -10,7 +10,7 @@
             "prefix": "app",
             "schematics": {
                 "@schematics/angular:component": {
-                    "styleExt":"scss"
+                    "style": "scss"
                 }
             },
             "architect": {
@@ -35,7 +35,18 @@
                             "node_modules/bootstrap/dist/js/bootstrap.min.js",
                             "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
 
-                            "node_modules/bootstrap/dist/js/bootstrap.js"
+                            "node_modules/bootstrap/dist/js/bootstrap.js",
+                            "src/assets/js/tmpJs/jquery.ajaxchimp.min.js",
+                            "src/assets/js/tmpJs/jquery.nice-select.min.js",
+
+                            "src/assets/js/tmpJs/jquery.ajaxchimp.min.js",
+                            "src/assets/js/tmpJs/jquery.sticky.js",
+                            "src/assets/js/tmpJs/ion.rangeSlider.js",
+                            "src/assets/js/tmpJs/jquery.magnific-popup.min.js",
+                            "src/assets/js/tmpJs/ion.rangeSlider.js",
+                            "src/assets/js/tmpJs/jquery.magnific-popup.min.js",
+                            "src/assets/js/tmpJs/owl.carousel.min.js",
+                            "src/assets/js/tmpJs/main.js"
                         ],
                         "es5BrowserSupport": true
                     },

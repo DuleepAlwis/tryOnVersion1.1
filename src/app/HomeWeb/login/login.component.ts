@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Customer } from 'src/app/modules/Customer';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,16 @@ export class LoginComponent implements OnInit {
  form = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required]),
+    code: new FormControl("", [Validators.required])
+  });
+
+  formRegister = new FormGroup({
+    name: new FormControl("", [Validators.required]),
+
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required]),
+    mobileno: new FormControl("", [Validators.required]),
+
     code: new FormControl("", [Validators.required])
   });
 
@@ -95,6 +106,57 @@ export class LoginComponent implements OnInit {
 
   forgotpassword() {
     this.passwordForgot = true;
+  }
+
+  nameInValid() {
+    console.log(this.form.get("name").invalid);
+    return this.form.get("name").invalid;
+  }
+
+  emailInValid() {
+    return this.form.get("email").invalid;
+  }
+
+  passwordInValid() {
+    return this.form.get("password").invalid;
+  }
+
+  signup() {
+    if (
+      (this.nameInValid())
+    ) {
+      console.log(
+        this.form.get("name").value + " " + this.form.get("city").value
+      );
+      alert("Something wrong with the name");
+    }
+    else if(this.passwordInValid())
+    {
+      alert("Something wrong with the password");
+
+    }
+    else if(this.emailInValid())
+    {
+      alert("Something wrong with the email");
+
+    }
+      else
+      {
+
+
+      let customer: Customer = {
+        name: this.form.get("name").value,
+        address: "",
+        city: "",
+        district: "",
+        mobileno: this.form.get("mobileno").value,
+        email: this.form.get("email").value,
+        password: this.form.get("password").value,
+        gender: ""
+      };
+      console.log(customer);
+      this.authService.signup(customer);
+    }
   }
 
 }

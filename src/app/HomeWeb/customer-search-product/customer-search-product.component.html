@@ -1,4 +1,23 @@
 <app-customer-navigation></app-customer-navigation>
+<section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+            <div class="col-first">
+                <span class="btn-lg"><i class="fas fa-user-tie bg-dark"></i></span>
+                <h3>Matching Costumes</h3>
+                <nav class="d-flex align-items-center justify-content-start">
+                    <a routerLink="">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsMen">Men's<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsWomen">Women's<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    <a routerLink="/productsAccessories">Accessories<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
@@ -124,24 +143,29 @@
         </div>
 
         <div class="col-md-7">
-            <h1 style="text-align: center">{{this.headerTitle}}</h1>
+            <h5 style="text-align: center">{{this.headerTitle}}</h5>
             <table>
                 <tbody>
                     <tr *ngFor="let productItem of this.productList" class="mt-1">
                         <td *ngFor="let product of productItem">
-                            <div class="mr-3 imgBox" style="display: inline-block">
+                            <div class="mr-3" style="display: inline-block">
 
                                 <div class="card" style="width: 18rem;height:19rem">
 
-                                    <img class="card-img-top imgCloth" src="{{product.imgFront}}" alt="Image 404" width="50%" height="50%">
+                                    <img class="card-img-top" src="{{product.imgFront}}" alt="Image 404" width="50%" height="50%">
 
                                     <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="ml-5 mr-5 mt-3">
-                                            <a [routerLink]="['/productview',this.item,product._id]" class="btn btn-primary" stlye="margin-left:77px">
+                                        <div style="height:35px">
+                                            <h5 class="card-title">{{product.name}}</h5>
+                                        </div>
+                                        <div style="height:35px">
+
+                                            <p class="ml-5 mr-5 mt-3">
+                                                <a [routerLink]="['/productview',this.item,product._id]" class="btn btn-primary" stlye="margin-left:77px">
                                         View
                                     </a>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-customer-profile',
@@ -13,7 +14,11 @@ import Swal from 'sweetalert2';
 export class CustomerProfileComponent implements OnInit {
 
   form = new FormGroup({
-    name: new FormControl("", [
+    fname: new FormControl("", [
+      Validators.required,
+      Validators.pattern('^[a-zA-Z]+$')
+    ]),
+    lname: new FormControl("", [
       Validators.required,
       Validators.pattern('^[a-zA-Z]+$')
     ]),
@@ -31,46 +36,53 @@ export class CustomerProfileComponent implements OnInit {
   "Trincomalee", "Vavuniya"];
 
   private email: string;
+
   constructor(
+    private shoppingCartService:ShoppingCartService,
     private authService: AuthService,
     private customerService: CustomerService,
     private router: Router
-  ) {}
+  )
+  {
+    this.customerService
+    .getCustomerProfile(this.authService.getUserId())
+    .subscribe(responseData => {
+      //console.log(responseData);
+      if (responseData.message == 0) {
+        this.router.navigate(["/"]);
+      } else {
+        console.log(responseData);
+        this.form.patchValue({
+          fname: (responseData.result.name).split(" ")[0].toString(),
+          lname: (responseData.result.name).split(" ")[1].toString(),
+
+          address: responseData.result.address,
+          city: responseData.result.city,
+          district: responseData.result.district,
+          mobileno: responseData.result.mobileno,
+
+          gender: responseData.result.gender
+        });
+      }
+    });
+  }
 
   ngOnInit() {
-    this.customerService
-      .getCustomerProfile(this.authService.getUserId())
-      .subscribe(responseData => {
-        //console.log(responseData);
-        if (responseData.message == 0) {
-          this.router.navigate(["/"]);
-        } else {
-          console.log(responseData.result);
-          this.form.patchValue({
-            name: responseData.result.name,
-            address: responseData.result.address,
-            city: responseData.result.city,
-            district: responseData.result.district,
-            mobileno: responseData.result.mobileno,
 
-            gender: responseData.result.gender
-          });
-        }
-      });
   }
 
   nameInValid() {
-    return this.form.get("name").invalid;
+    return this.form.get("fname").invalid && this.form.get("lname").invalid;
   }
 
   update() {
     if (!this.nameInValid()) {
       console.log(
-        this.form.get("name").value + " " + this.form.get("city").value
+        this.form.get("lname").value + " " + this.form.get("city").value
       );
       let customer = {
         email: this.email,
-        name: this.form.get("name").value,
+        name: this.form.get("fname").value+" "+this.form.get("lname").value,
         address: this.form.get("address").value,
         city: this.form.get("city").value,
         district: this.form.get("district").value,
@@ -101,15 +113,23 @@ export class CustomerProfileComponent implements OnInit {
             })
             // console.log(responseData);
             this.form.patchValue({
-              name: responseData.result.name,
+              fname: (responseData.result.name).split(" ")[0].toString(),
+              lname: (responseData.result.name).split(" ")[1].toString(),
+
               address: responseData.result.address,
               city: responseData.result.city,
               district: responseData.result.district,
               mobileno: responseData.result.mobileno,
+
               gender: responseData.result.gender
             });
           }
         });
     }
+  }
+
+  getShoppingCartCount()
+  {
+   return  this.shoppingCartService.getItemsCount();
   }
 }
