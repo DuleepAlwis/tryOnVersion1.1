@@ -7,10 +7,11 @@ import { AccessoriesFormComponent } from '../accessories-form/accessories-form.c
 import { Routes, RouterModule } from '@angular/router';
 import { ReceprionistProductsEditComponent } from '../receprionist-products-edit/receprionist-products-edit.component';
 import { ClothEditComponent } from '../cloth-edit/cloth-edit.component';
+import { ReceptionistMainComponent } from '../receptionist-main/receptionist-main.component';
 
 const productsAddRoutes: Routes = [
   {
-    component: ReceptionistProductsComponent,
+    component: ReceptionistMainComponent,
     path: "Receptionist",
     children: [
       {
@@ -27,17 +28,19 @@ const productsAddRoutes: Routes = [
         component: AccessoriesFormComponent,
         path: "accessoriesform/:title" /*,
         outlet: "addProducts"*/
+      },
+      {
+        component: ReceprionistProductsEditComponent,
+        path: "Receptionistproductedit"
+      },
+      {
+        component: ClothEditComponent,
+        path: "ClothEdit/:productId/:type/:category"
       }
     ]
-  },
-  {
-    component: ReceprionistProductsEditComponent,
-    path: "Receptionistproductedit"
-  },
-  {
-    component: ClothEditComponent,
-    path: "ClothEdit/:productId/:type/:category"
   }
+
+
 ];
 
 @NgModule({

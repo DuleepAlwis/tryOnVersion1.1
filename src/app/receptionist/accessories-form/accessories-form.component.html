@@ -1,14 +1,21 @@
 <div class="container-fluid">
-    <div class="row">
+    <!--<div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <h3>{{ this.title }}</h3>
         </div>
         <div class="col-md-4"></div>
-    </div>
+    </div>-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a routerLink="">Home</a>
+        </li>
+        <li class="breadcrumb-item active">{{ this.title }}</li>
+    </ol>
+
     <div class="row mt-1">
         <div class="col-md-2"></div>
-        <div class="col-md-6 rounded" style="background-color:LightBlue">
+        <div class="col-md-6 rounded" style="background-color: aliceblue">
             <form [formGroup]="form" (submit)="saveProduct()">
                 <div class="form-row">
                     <div class="form-group col-md-3">

@@ -30,23 +30,27 @@
                             "src/styles.scss"
                         ],
                         "scripts": [
-                            "src/assets/js/jquery.min.js",
+
+                            "./src/assets/js/jquery-3.2.1.min.js",
+                            "./src/assets/js/tmpJs/jquery-2.2.4.min.js",
+
                             "src/assets/js/popper.min.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
 
-                            "node_modules/bootstrap/dist/js/bootstrap.js",
-                            "src/assets/js/tmpJs/jquery.ajaxchimp.min.js",
-                            "src/assets/js/tmpJs/jquery.nice-select.min.js",
+                            "./src/assets/js/tmpJs/jquery.ajaxchimp.min.js",
+                            "./src/assets/js/tmpJs/jquery.nice-select.min.js",
+                            "./src/assets/js/tmpJs/jquery.sticky.js",
+                            "./src/assets/js/tmpJs/ion.rangeSlider.js",
+                            "./src/assets/js/tmpJs/jquery.magnific-popup.min.js",
+                            "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+                            "./src/assets/js/tmpJs/owl.carousel.min.js",
+                            "./src/assets/js/tmpJs/main.js",
 
-                            "src/assets/js/tmpJs/jquery.ajaxchimp.min.js",
-                            "src/assets/js/tmpJs/jquery.sticky.js",
-                            "src/assets/js/tmpJs/ion.rangeSlider.js",
-                            "src/assets/js/tmpJs/jquery.magnific-popup.min.js",
-                            "src/assets/js/tmpJs/ion.rangeSlider.js",
-                            "src/assets/js/tmpJs/jquery.magnific-popup.min.js",
-                            "src/assets/js/tmpJs/owl.carousel.min.js",
-                            "src/assets/js/tmpJs/main.js"
+
+
+                            "./src/assets/vendor/jquery-easing/jquery.easing.min.js",
+                            "./src/assets/js/js/sb-admin.min.js",
+                            "./src/assets/js/receptionist-sb.js"
                         ],
                         "es5BrowserSupport": true
                     },

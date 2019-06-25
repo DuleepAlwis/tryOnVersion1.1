@@ -213,7 +213,8 @@ export class ProductViewComponent implements OnInit {
   stockAvailable()
   {
     console.log(this.item[0].price);
-    if(this.category=='accessories')
+    console.log(this.item[0].quantity);
+    if(this.category=='accessories' || this.category=='Belts' || this.category=='HandBags' || this.category=='Caps' || this.category=='Gloves')
     {
       if(this.item[0].quantity>0)
       {
@@ -223,10 +224,13 @@ export class ProductViewComponent implements OnInit {
       {
         return "Not In Stock";
       }
+      console.log(this.item[0].quantity+" "+"A");
 
     }
     else
     {
+      console.log(this.item[0].quantity+" "+"Q");
+
       if((this.item[0].large.quantity+this.item[0].small.quantity+this.item[0].medium.quantity)>0)
       {
         return "In Stock";

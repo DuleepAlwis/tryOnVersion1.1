@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,VERSION } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +45,10 @@ import { BottumMeasurementDetailsComponent } from './HomeWeb/bottum-measurement-
 import { TopMeasurementDetailsComponent } from './HomeWeb/top-measurement-details/top-measurement-details.component';
 import { CustomerMeasurementComponent } from './HomeWeb/customer-measurement/customer-measurement.component';
 import { BillingPaymentComponent } from './HomeWeb/billing-payment/billing-payment.component';
+//import { ReceptionistMainComponent } from './receptionist/receptionist-main/receptionist-main.component';
+import { ReceptionistNavComponent } from './receptionist/receptionist-nav/receptionist-nav.component';
+import { ReceptionistSidebarComponent } from './receptionist/receptionist-sidebar/receptionist-sidebar.component';
+import { ReceptionistFooterComponent } from './receptionist/receptionist-footer/receptionist-footer.component';
 
 let config = new AuthServiceConfig([
   {
@@ -87,7 +91,11 @@ export function provideConfig() {
     BottumMeasurementDetailsComponent,
     TopMeasurementDetailsComponent,
     CustomerMeasurementComponent,
-    BillingPaymentComponent
+    BillingPaymentComponent,
+  //  ReceptionistMainComponent,
+    ReceptionistNavComponent,
+    ReceptionistSidebarComponent,
+    ReceptionistFooterComponent
 
   ],
   imports: [

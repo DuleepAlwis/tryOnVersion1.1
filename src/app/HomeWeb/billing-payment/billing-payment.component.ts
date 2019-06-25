@@ -35,10 +35,8 @@ export class BillingPaymentComponent implements OnInit {
     private authService: AuthService,
     private customerService: CustomerService,
     private router: Router
-  ) {}
-  ngOnInit() {
-
-
+  )
+  {
     this.customerService
     .getCustomerProfile(this.authService.getUserId())
     .subscribe(responseData => {
@@ -62,6 +60,11 @@ email:         responseData.result.email,
     });
     this.items = this.shoppingCartService.items;
     this.totalPrice = this.shoppingCartService.totalPrice;
+
+  }
+  ngOnInit() {
+
+
 
   }
 

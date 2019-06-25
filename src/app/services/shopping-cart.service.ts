@@ -29,6 +29,7 @@ export class ShoppingCartService {
 
     },
     price:"",
+    category:"",
     quantity:"",
     name:"",
     _id:""
@@ -71,7 +72,7 @@ export class ShoppingCartService {
    /* this.tmpItem = tmp;
     localStorage.setItem("tmpItem", JSON.stringify(tmp));
     localStorage.setItem("totalPrice", this.totalPrice);*/
-    this.items.push({_id:tmp._id,name:tmp.name,price:tmp.price,quantity:"1",unitPrice:tmp.price});
+    this.items.push({productId:tmp._id,name:tmp.name,price:tmp.price,quantity:"1",unitPrice:tmp.price,category:tmp.category});
     this.totalPrice = this.calculateTotalPrice();
     localStorage.setItem("totalPrice",this.totalPrice);
     this.addToLocalStorage();
@@ -135,7 +136,7 @@ export class ShoppingCartService {
       date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
     let time = date.getHours()+":"+date.getMinutes() ;
     console.log(delivery);
-
+console.log(JSON.stringify(this.itemsSerializeValues()));
     return this.http.post<{ message: Number }>(this.url + "/api/order/addOrder", {
       items: JSON.stringify(this.itemsSerializeValues()),
       delivery: JSON.stringify(delivery),

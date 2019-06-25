@@ -171,7 +171,7 @@ export class ReceprionistProductsEditComponent implements OnInit {
       { productId: this.itemObjects[index]._id, type: this.item }
     ]);*/
     this.route.navigateByUrl(
-      "ClothEdit/" +
+      "Receptionist/ClothEdit/" +
         this.itemObjects[index]._id +
         "/" +
         this.type +

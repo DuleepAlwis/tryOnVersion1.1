@@ -34,6 +34,7 @@ export class ShoppingCartComponent implements OnInit {
 
     },
     price:"",
+    category:"",
     quantity:"",
     name:"",
     _id:""

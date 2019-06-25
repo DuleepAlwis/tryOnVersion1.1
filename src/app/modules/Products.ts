@@ -19,6 +19,7 @@ export interface Products
 
   },
   price:string,
+  category:string,
   quantity:string,
   name:string,
   _id:string

@@ -117,6 +117,7 @@ this.items.push(responseData.result[i]);
 
 this.items.push(responseData.result[i]);
         }
+        console.log(responseData.result);
       }
 
       console.log(this.display);

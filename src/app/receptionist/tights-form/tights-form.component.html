@@ -1,11 +1,17 @@
 <div class="container-fluid ">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-7">
-            <h1>{{ this.title }}</h1>
+    <!--<div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3>{{ this.title }}</h3>
         </div>
         <div class="col-md-4"></div>
-    </div>
+    </div>-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a routerLink="">Home</a>
+        </li>
+        <li class="breadcrumb-item active">{{ this.title }}</li>
+    </ol>
     <div class="row">
 
         <div class="col-md-1"></div>
@@ -14,7 +20,7 @@
                 <label for="inputEmail4">Description</label>
                 <input type="text" class="form-control mb-3" id="inputEmail4" placeholder="" formControlName="name">
 
-                <table class="table table-bordered text-black rounded" style="background-color:LightBlue">
+                <table class="table table-bordered text-black rounded" style="background-color: aliceblue">
                     <h5><b>Measurements</b></h5>
                     <tr>
                         <th>#</th>

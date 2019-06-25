@@ -27,6 +27,7 @@ import { BottumMeasurementDetailsComponent } from './HomeWeb/bottum-measurement-
 import { TopMeasurementDetailsComponent } from './HomeWeb/top-measurement-details/top-measurement-details.component';
 import { CustomerMeasurementComponent } from './HomeWeb/customer-measurement/customer-measurement.component';
 import { BillingPaymentComponent } from './HomeWeb/billing-payment/billing-payment.component';
+import { ReceptionistMainComponent } from './receptionist/receptionist-main/receptionist-main.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,16 @@ const routes: Routes = [
   {
     component : OrderDetailsComponent,
     path : "OrderCustomer/:orderId",
+    canActivate : [AuthGuardService]
+  },
+  {
+    component : CustomerOrdersComponent,
+    path : "Receptionist/Orderdetails",
+    canActivate: [AuthGuardService]
+  },
+  {
+    component : OrderDetailsComponent,
+    path : "Receptionist/OrderCustomer/:orderId",
     canActivate : [AuthGuardService]
   },
   {
@@ -123,6 +134,11 @@ const routes: Routes = [
       path:'checkout',
       canActivate:[AuthGuardService]
     }
+   /* {
+      component:ReceptionistMainComponent,
+      path:'receptionistMain'
+    }*/
+
 
 ];
 
