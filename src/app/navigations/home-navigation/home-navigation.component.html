@@ -54,25 +54,20 @@
 -->
 <!-- End Header Area -->
 <header>
-    <div class="container-fluid navigation-header">
+    <!-- <div class="container-fluid navigation-header">
         <div class="row">
             <div class="menu-top container">
                 <div class="d-flex justify-content-between align-items-center">
                     <ul class="list mt-3">
-                        <li><a href="tel:+12312-3-1209" class="mr-3" style="color: black">+12312-3-1209</a></li>
-                        <li><a href="mailto:support@colorlib.com" class="mr-3" style="color:black">support@colorlib.com</a></li>
-                    </ul>
-                    <ul class="list mt-3">
-                        <li *ngIf="!this.isLoggedIn()"><a routerLink="/login" class="mr-3" style="color:black">login</a></li>
-                        <li *ngIf="this.isLoggedIn()"><a class="mr-3" style="color:black">Logged in as {{this.getEmail()}}</a></li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" routerLink="">
-            <a class="navbar-brand justify-content-center ml-5 text-success" href="#" style="font-size: 35px"><img src="../../../assets/img/images1.jpg" class="rounded-circle" style="width:15%;height:15%">tryOn</a>
+            <a class="navbar-brand justify-content-center ml-5 text-primary" href="#" style="font-size: 35px"><img src="../../../assets/img/logo.png"  style="width:25%;height:35%">TryOn</a>
         </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -93,6 +88,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/productsAccessories" style="color:black"><span><i class="fas fa-shopping-cart"></i>{{this.getShoppingCartCount()}}</span></a>
+                </li>
+                <li class="nav-item" *ngIf="!this.isLoggedIn()">
+                    <a routerLink="/login" style="color:black">login</a>
+                </li>
+                <li class="nav-item" *ngIf="this.isLoggedIn()">
+                    <a  style="color:black">Logged in as {{this.getEmail()}}</a>
                 </li>
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

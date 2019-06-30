@@ -1,5 +1,5 @@
 .navigation-header {
-    height: 57px;
+    height: 35px;
     background-color: aliceblue;
     color: black;
 }
@@ -18,4 +18,8 @@
     padding: 7px;
     padding-left: 7px;
     display: inline-block;
+}
+
+li {
+    margin-right: 80px;
 }
