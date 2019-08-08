@@ -99,6 +99,12 @@
                 <li class="nav-item" *ngIf="this.isLoggedIn()">
                     <a class="nav-link" style="color:whitesmoke">Logged in as {{this.getEmail()}}</a>>
                 </li>
+                <li class="nav-item" *ngIf="!this.isLoggedIn()">
+                    <a routerLink="/login" style="color:black">login</a>
+                </li>
+                <li class="nav-item" *ngIf="this.isLoggedIn()">
+                    <a style="color:black">Logged in as {{this.getEmail()}}</a>
+                </li>
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown

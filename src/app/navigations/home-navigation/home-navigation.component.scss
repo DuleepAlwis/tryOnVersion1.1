@@ -1,5 +1,5 @@
 .navigation-header {
-    height: 57px;
+    height: 35px;
     background-color: aliceblue;
     color: black;
 }
@@ -50,4 +50,8 @@
     -ms-border-radius: 17px;
     -o-border-radius: 17px;
     display: inline-block;
+}
+
+li {
+    margin-right: 80px;
 }
