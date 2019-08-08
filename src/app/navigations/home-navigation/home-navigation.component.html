@@ -53,8 +53,8 @@
 </header>
 -->
 <!-- End Header Area -->
-<header>
-    <div class="container-fluid navigation-header">
+<header class="mb-5">
+    <div class="container-fluid navigation-header" style="background-color: lightcyan">
         <div class="row">
             <div class="menu-top container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -63,36 +63,41 @@
                         <li><a href="mailto:support@colorlib.com" class="mr-3" style="color:black">support@colorlib.com</a></li>
                     </ul>
                     <ul class="list mt-3">
-                        <li *ngIf="!this.isLoggedIn()"><a routerLink="/login" class="mr-3" style="color:black">login</a></li>
+                        <li *ngIf="!this.isLoggedIn()"><a routerLink="/login" class="mr-3" style="color:black">Login</a></li>
                         <li *ngIf="this.isLoggedIn()"><a class="mr-3" style="color:black">Logged in as {{this.getEmail()}}</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand" routerLink="">
-            <a class="navbar-brand justify-content-center ml-5 text-success" href="#" style="font-size: 35px"><img src="../../../assets/img/images1.jpg" class="rounded-circle" style="width:15%;height:15%">tryOn</a>
+            <a class="navbar-brand justify-content-center ml-5 text-success" href="#" style="font-size: 35px;font-style:oblique"><img src="../../../assets/img/images1.jpg" class="rounded-circle" style="width:15%;height:15%">tryOn</a>
         </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse justify-content-end nav-style" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto text-success">
                 <li class="nav-item active">
-                    <a class="nav-link" routerLink="" style="color:black">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" routerLink="" style="color:whitesmoke">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/productsMen" style="color:black">Men's</a>
+                    <a class="nav-link" routerLink="/productsMen" style="color:whitesmoke">Men's</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/productsMen" style="color:black">Women's</a>
+                    <a class="nav-link" routerLink="/productsMen" style="color:whitesmoke">Women's</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/productsAccessories" style="color:black">Accessories</a>
+                    <a class="nav-link" routerLink="/productsAccessories" style="color:whitesmoke">Accessories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/productsAccessories" style="color:black"><span><i class="fas fa-shopping-cart"></i>{{this.getShoppingCartCount()}}</span></a>
+                    <a class="nav-link" routerLink="/productsAccessories" style="color:whitesmoke"><span><i class="fas fa-shopping-cart"></i>{{this.getShoppingCartCount()}}</span></a>
+                </li>
+                <li class="nav-item" *ngIf="!this.isLoggedIn()">
+                    <a class="nav-link" routerLink="/login" class="mr-3" style="color:whitesmoke">Login</a> </li>
+                <li class="nav-item" *ngIf="this.isLoggedIn()">
+                    <a class="nav-link" style="color:whitesmoke">Logged in as {{this.getEmail()}}</a>>
                 </li>
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -24,7 +24,10 @@ export class ReceptionistMainComponent implements OnInit {
   constructor(private authService: AuthService,private router:Router) { }
 
   ngOnInit() {
-    this.router.navigate(['Receptionist','suitform',this.items[1]]);
+    //this.router.navigate(['Receptionist','suitform',this.items[1]]);
+    
+    //this.router.navigate(['Receptionist','receptionist-dashboard']);
+    this.router.navigateByUrl("/Receptionist/receptionistdashboard");
   }
 
 

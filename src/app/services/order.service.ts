@@ -23,8 +23,31 @@ export class OrderService {
     return this.http.post<{message:Number,result:Orders}>(this.url+"/api/order/getOrder",{id:id});
   }
 
+  getAllOrdersCustomer()
+  {
+    return this.http.post<{message:Number,result:Array<Orders>}>(this.url+"/api/order/getAllOrderCustomer",{});
+  }
+
   getAllOrders()
   {
-    return this.http.post<{message:Number,result:Array<Orders>}>(this.url+"/api/order/getAllOrder",{});
+    return this.http.post<{message:Number,result:Array<Orders>}>(this.url+"/api/order/getAllOrderReceptionist",{});
   }
+
+  saveReview(orderId,comment,rating,rateMsg)
+  {
+    return this.http.post<{message:Number}>(this.url+"/api/order/saveReview",{orderId:orderId,comment:comment,rating:rating,rateMsg:rateMsg});
+
+  }
+
+  removeOrderCustomer(orderId)
+  {
+    return this.http.post<{message:Number}>(this.url+"/api/order/removeOrderCustomer",{orderId:orderId});
+
+  }
+
+  saveDeliverydate(orderId,date)
+  {
+    return this.http.post<{message:Number}>(this.url+"/api/order/deliveryDateSave",{orderId:orderId,date:date});
+  }
+
 }

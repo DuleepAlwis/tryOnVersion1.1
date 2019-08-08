@@ -16,6 +16,7 @@ import { NavigationStart, Router } from "@angular/router";
 import { browser } from "protractor";
 import { Subscription } from "rxjs";
 import { ShoppingCartService } from "./shopping-cart.service";
+import { CustomerSupportService } from './customer-support.service';
 
 @Injectable({
   providedIn: "root"
@@ -61,6 +62,8 @@ export class AuthService {
     localStorage.setItem("token", this.token);
     localStorage.setItem("role",this.role);
     localStorage.setItem("email",email);
+    //this.customerSupportService.makeConnection();
+
   }
 
   logout() {

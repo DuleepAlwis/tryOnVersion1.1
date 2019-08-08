@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Customer } from 'src/app/modules/Customer';
+import { CustomerSupportService } from '../../services/customer-support.service';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
   private loggedin: boolean;
   passwordForgot: boolean = false;
   codeSent: boolean = false;
-  constructor(private authService: AuthService, private route: Router) {}
+  logginForm:boolean = true;
+  constructor(private authService: AuthService, private customerSupportService:CustomerSupportService,private route: Router) {}
 
   ngOnInit() {}
 
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
                 responseData.role,
                 responseData.email
               );
+             this.customerSupportService.makeConnection();
               break;
               case "R":
               this.route.navigateByUrl("Receptionist");
@@ -157,6 +160,12 @@ export class LoginComponent implements OnInit {
       console.log(customer);
       this.authService.signup(customer);
     }
+  }
+
+
+  invertLogginForm()
+  {
+    this.logginForm = !this.logginForm;
   }
 
 }

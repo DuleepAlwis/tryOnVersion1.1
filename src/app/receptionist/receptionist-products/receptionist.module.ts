@@ -10,6 +10,9 @@ import { ClothEditComponent } from '../cloth-edit/cloth-edit.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReceptionistRouteModule } from './receptionist-route.module';
 import { ReceptionistMainComponent } from '../receptionist-main/receptionist-main.component';
+import { ViewCustomerOrdersComponent } from '../view-customer-orders/view-customer-orders.component';
+import { ViewOrderComponent } from '../view-order/view-order.component';
+import { ReceptionistDashboardComponent } from '../receptionist-dashboard/receptionist-dashboard.component';
 
 @NgModule({
   declarations: [ TightsFormComponent,
@@ -19,7 +22,10 @@ import { ReceptionistMainComponent } from '../receptionist-main/receptionist-mai
     ReceptionistNavigationComponent,
     ReceprionistProductsEditComponent,
     ClothEditComponent,
-    ReceptionistMainComponent
+    ReceptionistMainComponent,
+    ViewCustomerOrdersComponent,
+    ViewOrderComponent,
+ReceptionistDashboardComponent
   ],
   imports: [CommonModule, ReceptionistRouteModule, ReactiveFormsModule, FormsModule]
 })

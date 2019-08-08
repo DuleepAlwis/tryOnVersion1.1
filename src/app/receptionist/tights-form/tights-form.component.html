@@ -14,22 +14,89 @@
     </ol>
     <div class="row">
 
-        <div class="col-md-1"></div>
-        <div class="col-md-7">
+        <div class="col-md-12">
             <form [formGroup]="form" (submit)="addTights()">
-                <label for="inputEmail4">Description</label>
-                <input type="text" class="form-control mb-3" id="inputEmail4" placeholder="" formControlName="name">
+                <div class="form-row">
+                    <div class="col-md-7">
 
+                        <label for="inputEmail4">Name</label>
+                        <input type="text" class="form-control mb-3" id="inputEmail4" placeholder="" formControlName="name">
+
+                        <label for="inputEmail4">Description</label>
+                        <input type="text" class="form-control mb-3" id="inputEmail4" placeholder="" formControlName="description">
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../../../assets/img/pants.png" *ngIf="this.newProduct">
+
+                        <div style="border:inset;border-width: 7px;width:300px;height:350px" *ngIf="!this.newProduct">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div style="width:300px;height:300px">
+
+                                            <img class="d-block w-100" [src]="this.imgFrontPath" alt="First slide">
+                                            <h3>Front Side</h3>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div style="width:300px;height:300px">
+
+                                            <img class="d-block w-100" [src]="this.imgBackPath" alt="Second slide">
+                                            <h3>Back Side</h3>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div style="width:300px;height:300px">
+
+                                            <img class="d-block w-100" [src]="this.imgLeftPath" alt="Third slide">
+                                            <h3>Left Side</h3>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div style="width:300px;height:300px">
+
+                                            <img class="d-block w-100" [src]="this.imgRightPath" alt="Third slide">
+                                            <h3>Right Side</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <table class="table table-bordered text-black rounded" style="background-color: aliceblue">
                     <h5><b>Measurements</b></h5>
                     <tr>
                         <th>#</th>
+                        <th colspan="2" class="text-center">XXS</th>
+                        <th colspan="2" class="text-center">XS</th>
+
                         <th colspan="2" class="text-center">Small</th>
                         <th colspan="2" class="text-center">Medium</th>
                         <th colspan="2" class="text-center">Large</th>
+                        <th colspan="2" class="text-center">XL</th>
+                        <th colspan="2" class="text-center">XXL</th>
+
                     </tr>
                     <tr>
                         <td>Pants waist</td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSPantsW1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSPantsW2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSPantsW1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSPantsW2" value="0">
+                        </td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSPantsW1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSPantsW2" value="0">
@@ -45,10 +112,28 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLPantsW2" value="0">
                         </td>
 
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLPantsW1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLPantsW2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLPantsW1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLPantsW2" value="0">
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Hips</td>
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSHips1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSHips2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSHips1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSHips2" value="0">
+                        </td>
+
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSHips1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSHips2" value="0">
@@ -64,10 +149,29 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLHips2" value="0">
                         </td>
 
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLHips1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLHips2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLHips1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLHips2" value="0">
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Length</td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSLength1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSLength2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSLength1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSLength2" value="0">
+                        </td>
+
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSLength1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSLength2" value="0">
@@ -83,10 +187,29 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLLength2" value="0">
                         </td>
 
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLLength1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLLength2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLLength1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLLength2" value="0">
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Crotch</td>
+
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSCrotch1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSCrotch2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSCrotch1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSCrotch2" value="0">
+                        </td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSCrotch1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSCrotch2" value="0">
@@ -102,10 +225,28 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLCrotch2" value="0">
                         </td>
 
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLCrotch1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLCrotch2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLCrotch1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLCrotch2" value="0">
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Thigh</td>
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSThigh1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSThigh2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSThigh1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSThigh2" value="0">
+                        </td>
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSThigh1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSThigh2" value="0">
@@ -121,10 +262,32 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLThigh2" value="0">
                         </td>
 
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLThigh1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLThigh2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLThigh1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLThigh2" value="0">
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Knee</td>
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSKnee1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXSKnee2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXSKnee1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXSKnee2" value="0">
+                        </td>
+
+
+
                         <td> <input type="number" class="form-control" min="0" formControlName="MeasurementSKnee1" value="0">
                         </td>
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementSKnee2" value="0">
@@ -140,26 +303,60 @@
                         <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementLKnee2" value="0">
                         </td>
 
+
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXLKnee1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXLKnee2" value="0">
+                        </td>
+                        <td> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLKnee1" value="0">
+                        </td>
+                        <td class=""> <input type="number" class="form-control" min="0" formControlName="MeasurementXXLKnee2" value="0">
+                        </td>
+
                     </tr>
 
                     <tr>
-                        <td>Quantity & Price</td>
-                        <td> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementSQ" value="0">
-                        </td>
-                        <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementSP" value="0">
-                        </td>
+                        <td>Quantity</td>
 
-                        <td> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementMQ" value="0">
+                        <td colspan="2"> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementXXSQ" value="0">
                         </td>
-                        <td> Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementMP" value="0">
+                        <!-- <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementXXSP" value="0">
+                        </td>-->
+                        <td colspan="2"> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementXSQ" value="0">
                         </td>
+                        <!-- <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementXSP" value="0">
+                        </td>-->
 
-                        <td>
+                        <td colspan="2"> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementSQ" value="0">
+                        </td>
+                        <!--  <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementSP" value="0">
+                        </td>-->
+
+                        <td colspan="2"> Quantity<input type="number" class="form-control" min="0" formControlName="MeasurementMQ" value="0">
+                        </td>
+                        <!-- <td> Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementMP" value="0">
+                        </td>-->
+
+                        <td colspan="2">
                             Quantity
                             <input type="number" class="form-control" min="0" formControlName="MeasurementLQ" value="0">
                         </td>
-                        <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementLP" value="0">
+                        <!--  <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementLP" value="0">
+                        </td>-->
+
+
+                        <td colspan="2">
+                            Quantity
+                            <input type="number" class="form-control" min="0" formControlName="MeasurementXLQ" value="0">
                         </td>
+                        <!-- <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementXLP" value="0">
+                        </td>-->
+                        <td>
+                            Quantity
+                            <input type="number" class="form-control" min="0" formControlName="MeasurementXXLQ" value="0">
+                        </td>
+                        <!--  <td>Price(Rs.) <input type="number" class="form-control" min="0" formControlName="MeasurementXXLP" value="0">
+                        </td>-->
                     </tr>
 
                 </table>
@@ -182,51 +379,8 @@
 
             </form>
         </div>
-        <div class="col-md-3">
-            <img src="../../../assets/img/pants.png" *ngIf="this.newProduct">
-
-            <div style="border:inset;border-width: 7px;width:300px;height:350px" *ngIf="!this.newProduct">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div style="width:300px;height:300px">
-
-                                <img class="d-block w-100" [src]="this.imgFrontPath" alt="First slide">
-                                <h3>Front Side</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div style="width:300px;height:300px">
-
-                                <img class="d-block w-100" [src]="this.imgBackPath" alt="Second slide">
-                                <h3>Back Side</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div style="width:300px;height:300px">
-
-                                <img class="d-block w-100" [src]="this.imgLeftPath" alt="Third slide">
-                                <h3>Left Side</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div style="width:300px;height:300px">
-
-                                <img class="d-block w-100" [src]="this.imgRightPath" alt="Third slide">
-                                <h3>Right Side</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
+        <div class="col-md-1">
+            <!---------------------------------------->
         </div>
     </div>
     <div class="row" *ngIf="!this.newProduct">

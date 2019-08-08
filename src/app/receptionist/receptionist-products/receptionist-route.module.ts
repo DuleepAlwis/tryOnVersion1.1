@@ -8,6 +8,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReceprionistProductsEditComponent } from '../receprionist-products-edit/receprionist-products-edit.component';
 import { ClothEditComponent } from '../cloth-edit/cloth-edit.component';
 import { ReceptionistMainComponent } from '../receptionist-main/receptionist-main.component';
+import { ViewCustomerOrdersComponent } from '../view-customer-orders/view-customer-orders.component';
+import { ViewOrderComponent } from '../view-order/view-order.component';
+import { ReceptionistDashboardComponent } from '../receptionist-dashboard/receptionist-dashboard.component';
 
 const productsAddRoutes: Routes = [
   {
@@ -36,6 +39,18 @@ const productsAddRoutes: Routes = [
       {
         component: ClothEditComponent,
         path: "ClothEdit/:productId/:type/:category"
+      },
+      {
+        component: ViewCustomerOrdersComponent,
+        path: "CustomerOrdersView"
+      },
+      {
+        component: ViewOrderComponent,
+        path : "ViewOrder/:orderId",
+      },
+      {
+        component: ReceptionistDashboardComponent,
+        path : "receptionistdashboard",
       }
     ]
   }

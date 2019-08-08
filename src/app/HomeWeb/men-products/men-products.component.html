@@ -1,6 +1,6 @@
 <app-home-navigation *ngIf="!this.isLoggedIn()"></app-home-navigation>
 <app-customer-navigation *ngIf="this.isLoggedIn()"></app-customer-navigation>
-<!-- Start Banner Area -->
+<!-- Start Banner Area 
 <section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
     <div class="container">
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- End Banner Area -->
 <div class="container">
@@ -417,174 +417,14 @@
                               -->
                 </ul>
             </div>
-            <div class="sidebar-filter mt-50">
-                <div class="top-filter-head">Product Filters</div>
-                <div class="common-filter">
-                    <div class="head">Active Filters</div>
-                    <ul>
-                        <li class="filter-list"><i class="fa fa-window-close" aria-hidden="true"></i>Gionee (29)</li>
-                        <li class="filter-list"><i class="fa fa-window-close" aria-hidden="true"></i>Black with red (09)</li>
-                    </ul>
-                </div>
-                <div class="common-filter">
-                    <div class="head">Brands</div>
-                    <form action="#">
-                        <ul>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
-                        </ul>
-                    </form>
-                </div>
-                <div class="common-filter">
-                    <div class="head">Color</div>
-                    <form action="#">
-                        <ul>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black Leather<span>(29)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black with red<span>(19)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
-                            <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
-                        </ul>
-                    </form>
-                </div>
-                <div class="common-filter">
-                    <div class="head">Price</div>
-                    <div class="price-range-area">
-                        <div id="price-range"></div>
-                        <div class="value-wrapper d-flex">
-                            <div class="price">Price:</div>
-                            <span>$</span>
-                            <div id="lower-value"></div>
-                            <div class="to">to</div>
-                            <span>$</span>
-                            <div id="upper-value"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
 
 <!-- Start Most Search Product Area -->
 <section class="section-half">
-    <div class="container">
-        <div class="organic-section-title text-center">
-            <h3>Most Searched Products</h3>
-        </div>
-        <div class="row mt-30">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r1.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Blueberry</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $240.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r2.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Cabbage</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $189.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r3.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Raspberry</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $189.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r4.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Kiwi</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $189.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r5.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore Bell Pepper</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $120.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r6.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Blackberry</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $120.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r7.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Brocoli</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $120.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r8.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Carrot</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $120.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r9.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Strawberry</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $240.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r10.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Prixma MG2 Light Inkjet</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $240.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r11.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Cherry</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $240.00 <del>$340.00</del></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-search-product d-flex">
-                    <a href="#"><img src="img/r12.jpg" alt=""></a>
-                    <div class="desc">
-                        <a href="#" class="title">Pixelstore fresh Beans</a>
-                        <div class="price"><span class="lnr lnr-tag"></span> $240.00 <del>$340.00</del></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-footer-area>
+    </app-footer-area>
 </section>
 <!-- End Most Search Product Area -->

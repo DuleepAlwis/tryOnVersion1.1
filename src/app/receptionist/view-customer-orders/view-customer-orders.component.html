@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <h3 *ngIf="this.getRole()=='R'" style="text-align: center">Customer Orders</h3>
+      </div>
+
+  </div>
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-7">
+          <!--Customer-->
+          <div style="height:350px;overflow-y: scroll">
+
+              <table class="table sticky-header order-table" *ngIf="this.getRole()=='C'" style="">
+                  <thead>
+                      <tr class="bg-dark text-white">
+                          <th scope="col">#</th>
+                          <th scope="col">Ordered date</th>
+                          <th scope="col">Time</th>
+                          <th scope="col">Total Price(Rs.)</th>
+                          <th scope="col">Status</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                      <div *ngIf="this.isLoading" class="spinner-border text-primary ml-5 mr-5" role="status">
+                          <span class="sr-only">Loading...</span>
+                      </div>
+                      <h1 style="text-align:center">{{ this.message }}</h1>
+                      <tr *ngFor="let order of this.orders">
+                          <th scope="row"></th>
+                          <td>{{ order.date }}</td>
+                          <td>{{ order.time }}</td>
+                          <td>{{order.totalPrice }}</td>
+                          <td>{{order.status }}</td>
+                          <td><a class="btn btn-primary" [routerLink]="['/Receptionist/ViewOrder',order._id]">View</a></td>
+                          <td>
+                                <button class="btn btn-danger" (click)="removeOrder(i)">
+                                <i class="far fa-trash-alt"></i>
+                </button>
+                            </td>
+                      </tr>
+
+                  </tbody>
+              </table>
+
+              <!--Receptionist-->
+
+              <table class="table order-table" *ngIf="this.getRole()=='R'" style="overflow-y: scroll">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Ordered date</th>
+                          <th scope="col">Time</th>
+                          <th scope="col">Total Price(Rs.)</th>
+                          <th scope="col">Status</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                      <div *ngIf="this.isLoading" class="spinner-border text-primary ml-5 mr-5" role="status">
+                          <span class="sr-only">Loading...</span>
+                      </div>
+                      <h1 style="text-align:center">{{ this.message }}</h1>
+                      <tr *ngFor="let order of this.orders;index as i">
+                          <th scope="row"></th>
+                          <td>{{ order.date }}</td>
+                          <td>{{ order.time }}</td>
+                          <td>{{order.totalPrice }}</td>
+                          <td>{{order.status }}</td>
+                          <td><a class="btn btn-primary" [routerLink]="['/Receptionist/ViewOrder',order._id]">View</a></td>
+                          <td>
+                                <button class="btn btn-danger" (click)="removeOrder(i)">
+                                <i class="far fa-trash-alt"></i>
+                </button>
+                            </td>
+                      </tr>
+
+                  </tbody>
+
+              </table>
+          </div>
+      </div>
+  </div>
+
+</div>

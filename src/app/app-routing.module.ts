@@ -28,6 +28,9 @@ import { TopMeasurementDetailsComponent } from './HomeWeb/top-measurement-detail
 import { CustomerMeasurementComponent } from './HomeWeb/customer-measurement/customer-measurement.component';
 import { BillingPaymentComponent } from './HomeWeb/billing-payment/billing-payment.component';
 import { ReceptionistMainComponent } from './receptionist/receptionist-main/receptionist-main.component';
+import { CustomerViewOrdersComponent } from './HomeWeb/customer-view-orders/customer-view-orders.component';
+import { CustomerOrderViewComponent } from './HomeWeb/customer-order-view/customer-order-view.component';
+import { CustomerSupportComponent } from './HomeWeb/customer-support/customer-support.component';
 
 
 const routes: Routes = [
@@ -48,11 +51,11 @@ const routes: Routes = [
     path : "Orderdetails",
     canActivate: [AuthGuardService]
   },
-  {
+  /*{
     component : OrderDetailsComponent,
     path : "OrderCustomer/:orderId",
     canActivate : [AuthGuardService]
-  },
+  },*/
   {
     component : CustomerOrdersComponent,
     path : "Receptionist/Orderdetails",
@@ -108,6 +111,10 @@ const routes: Routes = [
           path:'CustomerTopMeasurement',
           canActivate:[AuthGuardService]
         },
+        {
+          component:CustomerSupportComponent,
+          path:'CustomerSupport'
+        },
     /*{
       component : OrdersComponent,
       path : "Orderdetails",
@@ -133,6 +140,16 @@ const routes: Routes = [
       component:BillingPaymentComponent,
       path:'checkout',
       canActivate:[AuthGuardService]
+    },
+    {
+      component : CustomerViewOrdersComponent,
+      path : "CustomerOrdersView",
+      canActivate: [AuthGuardService]
+    },
+    {
+      component : CustomerOrderViewComponent,
+      path : "OrderCustomer/:orderId",
+      canActivate: [AuthGuardService]
     }
    /* {
       component:ReceptionistMainComponent,

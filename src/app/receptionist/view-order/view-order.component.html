@@ -1,0 +1,138 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7">
+            <h3 style="text-align:center">OrderId : {{this.orderId}}</h3>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="background-color: aqua;border-radius: 7px;border-color: black">
+            <h3>Order <i class="fas fa-cart-arrow-down"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:0px">
+                        <td>Ordered-Date</td>
+                        <td>{{this.orderedDate}}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Time</td>
+                        <td>{{this.orderedDate}}</td>
+                        <td>{{ this.time }}</td>
+
+
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Total Price</td>
+                        <td>{{ this.totalPrice }}</td>
+
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Status</td>
+                        <td>{{ this.status }}</td>
+
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Comment</td>
+                        <td>{{ this.comment }}</td>
+
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3" style="background-color: palegreen;border-radius: 7px;border-color: black">
+            <h3>Delivery <i class="fas fa-truck"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:0px">
+                        <td>Address</td>
+                        <td>{{this.address}}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>City</td>
+                        <td>{{ this.city }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>District</td>
+                        <td>{{ this.district }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Address</td>
+                        <td>{{this.address}}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+                        <td>Mobile number</td>
+                        <td>{{ this.mobilenumber }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+                        <td>Deliver on</td>
+                        <td>{{this.dueDate}}</td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4" style="background-color:chartreuse;border-radius: 7px;border-color: black">
+            <h3>Items list<i class="fas fa-tags"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:7px">
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                        <td>Size</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px" *ngFor="let item of this.orderedItems">
+                        <td>{{item.name}}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.size }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="this.status=='NC'">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <label for="exampleInputEmail1">            Update the delivery date:
+                            </label>
+                <input type="date" class="form-control" [(ngModel)]="this.deliveryDate">
+            </div>
+
+            <button class="btn btn-primary" (click)="this.saveDeliverydate()">Save</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="this.display">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <!-- <form class="text-dark">
+        <div class="row" style="border-radius: 7px;background-color:aliceblue;color:black">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Comment</label>
+          <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Ratings</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="form-control ml-3 mt-1" id="formGroupExampleInput2" value="Save">
+        </div>
+      </div>
+      </form>-->
+
+        </div>
+    </div>
+</div>

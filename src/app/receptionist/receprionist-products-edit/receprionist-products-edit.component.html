@@ -55,10 +55,10 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Small Price(RS.)</th>
-                        <th scope="col">Medium Price(RS.)</th>
-                        <th scope="col">Large Price(RS.)</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Small Quantity</th>
+                        <th scope="col">Medium Quantity</th>
+                        <th scope="col">Large Quantity</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
 
@@ -70,11 +70,11 @@
                         <th scope="row">{{ i + 1 }}</th>
                         <td>{{ item.name }}</td>
                         <td>
-                            {{ item.small.quantity+item.medium.quantity+item.large.quantity }}
+                            {{ item.small.price}}
                         </td>
-                        <td>{{ item.small.price }}</td>
-                        <td>{{ item.medium.price }}</td>
-                        <td>{{ item.large.price }}</td>
+                        <td>{{ item.small.quantity }}</td>
+                        <td>{{ item.medium.quantity }}</td>
+                        <td>{{ item.large.quantity }}</td>
 
                         <td>
                             <button class="btn btn-primary" (click)="viewProducts(i)">

@@ -1,0 +1,167 @@
+<app-customer-navigation></app-customer-navigation>
+<!--<section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
+  <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+          <div class="col-first">
+              <h1 class="text-dark"><span><i class="fas fa-cart-arrow-down"></i></span>Orders</h1>
+              <nav class="d-flex align-items-center justify-content-start">
+                  <a routerLink="">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                  <a routerLink="/productsMen">Men's Costumes<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                  <a routerLink="/productsWomen">Women's Costumes<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                  <a routerLink="/productAccessories">Accessories</a>
+
+              </nav>
+          </div>
+      </div>
+  </div>
+</section>-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7">
+            <h3 style="text-align:center">OrderId : {{this.orderId}}</h3>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="background-color: aqua;border-radius: 7px;border-color: black">
+            <h3>Order <i class="fas fa-cart-arrow-down"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:0px">
+                        <td>Ordered-Date</td>
+                        <td>{{this.orderedDate}}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+                        <td>Time</td>
+                        <td>{{ this.time }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+
+                        <td>Total Price</td>
+                        <td>{{ this.totalPrice }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+
+                        <td>Status</td>
+                        <td>{{ this.status }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:0px">
+
+                        <td>Comment</td>
+                        <td>{{ this.comment }}</td>
+
+                    </tr>
+                    <tr scope="row">
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3" style="background-color: palegreen;border-radius: 7px;border-color: black">
+            <h3>Delivery <i class="fas fa-truck"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:7px">
+                        <td>Address</td>
+                        <td>{{this.address}}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+
+                        <td>City</td>
+                        <td>{{ this.city }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+
+                        <td>District</td>
+                        <td>{{ this.district }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+
+                        <td>Mobile number</td>
+                        <td>{{ this.mobilenumber }}</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px">
+
+                        <td>Deliver on</td>
+                        <td>{{this.dueDate}}</td>
+
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4" style="background-color:chartreuse;border-radius: 7px;border-color: black">
+            <h3>Items list<i class="fas fa-tags"></i></h3>
+            <table class="table">
+
+                <tbody>
+                    <tr scope="row" style="padding:7px">
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                        <td>Size</td>
+                    </tr>
+                    <tr scope="row" style="padding:7px" *ngFor="let item of this.orderedItems">
+                        <td>{{item.name}}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.size }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="this.display">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <!-- <form class="text-dark">
+        <div class="row" style="border-radius: 7px;background-color:aliceblue;color:black">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Comment</label>
+          <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Ratings</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="form-control ml-3 mt-1" id="formGroupExampleInput2" value="Save">
+        </div>
+      </div>
+      </form>-->
+            <form [formGroup]="form" class="text-dark" (submit)="saveReview()">
+                <table>
+                    <tr>
+                        <th>Comment</th>
+                        <th>Ratings</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" formControlName="reviewTxt"></textarea>
+
+                        </td>
+                        <td>
+                            <star-rating value="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" class="form-control ml-3 mt-1 btn btn-primary" id="formGroupExampleInput2" value="Save">
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+</div>

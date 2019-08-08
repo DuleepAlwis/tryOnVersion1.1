@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,VERSION } from '@angular/core';
-
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeNaviationComponent } from './HomeWeb/home-naviation/home-naviation.component';
@@ -49,7 +49,15 @@ import { BillingPaymentComponent } from './HomeWeb/billing-payment/billing-payme
 import { ReceptionistNavComponent } from './receptionist/receptionist-nav/receptionist-nav.component';
 import { ReceptionistSidebarComponent } from './receptionist/receptionist-sidebar/receptionist-sidebar.component';
 import { ReceptionistFooterComponent } from './receptionist/receptionist-footer/receptionist-footer.component';
-
+import { CustomerViewOrdersComponent } from './HomeWeb/customer-view-orders/customer-view-orders.component';
+import { CustomerOrderViewComponent } from './HomeWeb/customer-order-view/customer-order-view.component';
+import { CustomerSupportComponent } from './HomeWeb/customer-support/customer-support.component';
+import { RatingModule } from 'ng-starrating';
+import { CustomerSupportService } from './services/customer-support.service';
+import { ViewCustomerOrdersComponent } from './receptionist/view-customer-orders/view-customer-orders.component';
+import { ViewOrderComponent } from './receptionist/view-order/view-order.component';
+import { FooterAreaComponent } from './HomeWeb/footer-area/footer-area.component';
+const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -95,7 +103,12 @@ export function provideConfig() {
   //  ReceptionistMainComponent,
     ReceptionistNavComponent,
     ReceptionistSidebarComponent,
-    ReceptionistFooterComponent
+    ReceptionistFooterComponent,
+    CustomerViewOrdersComponent,
+    CustomerOrderViewComponent,
+    CustomerSupportComponent,
+    FooterAreaComponent
+   
 
   ],
   imports: [
@@ -106,12 +119,13 @@ BrowserModule,
     FormsModule,
     ReceptionistModule,
     //CustomerModule,
-    SocialLoginModule
-
+    SocialLoginModule,
+    SocketIoModule.forRoot(configSocket),
+    RatingModule 
 
   ],
   providers: [AuthGuardService,AuthInterceptorService,AuthService,CustomerService,OrderService,ProductService,SearchProductService,
-  ShoppingCartService, {
+  ShoppingCartService, CustomerSupportService,{
     provide: AuthServiceConfig,
     useFactory: provideConfig
   },{provide:HTTP_INTERCEPTORS,useClass: AuthInterceptorService,multi:true}],

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div style="border-width: 7px;height:155px;overflow-y:scroll">
+        <ul style="list-style-type: none">
+          <li *ngFor="let msgObject of this.msgArry"></li>
+        </ul>
+      </div>
+      <div style="border-width: 7px;height:155px;width:auto">
+        <form [formGroup]="form" (submit)="sendMessage()">
+          <textarea class="form-control" formControlName="messageHelp"></textarea>
+          <input type="submit" class="form-control" value="Send">            
+           <input type="reset" class="form-control" value="Cancel">          
+
+      </form>
+      </div>
+    </div>
+
+  </div>
+</div>

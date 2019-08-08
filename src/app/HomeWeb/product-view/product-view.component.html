@@ -412,7 +412,7 @@
 <!-- Start Product Details -->
 <app-home-navigation *ngIf="!this.isLoggedIn()"></app-home-navigation>
 <app-customer-navigation *ngIf="this.isLoggedIn()"></app-customer-navigation>
-<!-- Start Banner Area -->
+<!-- Start Banner Area 
 <section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
     <div class="container">
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
@@ -428,10 +428,10 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- End Banner Area -->
-<div class="container">
+<div class="container mt-5">
     <div class="product-quick-view">
         <div class="row align-items-center">
 
@@ -559,12 +559,27 @@
                     <h5><b>Measurements</b></h5>
                     <tr>
                         <th>#</th>
+                        <th colspan="2" class="text-center">XXS</th>
+                        <th colspan="2" class="text-center">XS</th>
+
                         <th colspan="2" class="text-center">Small</th>
                         <th colspan="2" class="text-center">Medium</th>
                         <th colspan="2" class="text-center">Large</th>
+
+                        <th colspan="2" class="text-center">XL</th>
+                        <th colspan="2" class="text-center">XXL</th>
+
                     </tr>
                     <tr>
                         <td>Neck</td>
+                        <td>{{ this.item[0].xxs.neck[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.neck[1] }}
+                        </td>
+                        <td>{{ this.item[0].xs.neck[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.neck[1] }}
+                        </td>
                         <td>{{ this.item[0].small.neck[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.neck[1] }}
@@ -579,11 +594,28 @@
                         </td>
                         <td class=""> {{ this.item[0].large.neck[1] }}
                         </td>
+                        <td>{{ this.item[0].xl.neck[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.neck[1] }}
+                        </td>
+                        <td>{{ this.item[0].xxl.neck[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.neck[1] }}
+                        </td>
 
                     </tr>
 
                     <tr>
+
                         <td>Shoulder Width</td>
+                        <td> {{ this.item[0].xxs.shoulderweist[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.shoulderweist[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.shoulderweist[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.shoulderweist[1] }}
+                        </td>
                         <td> {{ this.item[0].small.shoulderweist[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.shoulderweist[1] }}
@@ -599,10 +631,27 @@
                         <td class=""> {{ this.item[0].large.shoulderweist[1] }}
                         </td>
 
+                        <td> {{ this.item[0].xl.shoulderweist[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.shoulderweist[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.shoulderweist[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.shoulderweist[1] }}
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Biceps</td>
+                        <td> {{ this.item[0].xxs.biceps[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.biceps[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.biceps[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.biceps[1] }}
+                        </td>
                         <td> {{ this.item[0].small.biceps[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.biceps[1] }}
@@ -617,11 +666,31 @@
                         </td>
                         <td class=""> {{ this.item[0].large.biceps[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.biceps[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.biceps[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.biceps[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.biceps[1] }}
+                        </td>
 
                     </tr>
 
                     <tr>
                         <td>Jacket Length</td>
+
+
+                        <td> {{ this.item[0].xxs.jacketlength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.jacketlength[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xs.jacketlength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.jacketlength[1] }}
+                        </td>
+
                         <td> {{ this.item[0].small.jacketlength[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.jacketlength[1] }}
@@ -636,11 +705,31 @@
                         </td>
                         <td class=""> {{ this.item[0].large.jacketlength[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.jacketlength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.jacketlength[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xxl.jacketlength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.jacketlength[1] }}
+                        </td>
+
 
                     </tr>
 
                     <tr>
                         <td>Sleeve Length</td>
+                        <td> {{ this.item[0].xxs.sleevelength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.sleevelength[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xs.sleevelength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.sleevelength[1] }}
+                        </td>
+
                         <td> {{ this.item[0].small.sleevelength[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.sleevelength[1] }}
@@ -655,11 +744,31 @@
                         </td>
                         <td class=""> {{ this.item[0].large.sleevelength[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.sleevelength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.sleevelength[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xxl.sleevelength[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.sleevelength[1] }}
+                        </td>
+
 
                     </tr>
 
                     <tr>
                         <td>Chest</td>
+
+
+                        <td> {{ this.item[0].xxs.chest[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.chest[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.chest[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.chest[1] }}
+                        </td>
                         <td> {{ this.item[0].small.chest[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.chest[1] }}
@@ -674,7 +783,14 @@
                         </td>
                         <td class=""> {{ this.item[0].large.chest[1] }}
                         </td>
-
+                        <td> {{ this.item[0].xl.chest[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.chest[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.chest[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.chest[1] }}
+                        </td>
                     </tr>
 
 
@@ -684,12 +800,26 @@
                     <h5><b>Measurements</b></h5>
                     <tr>
                         <th>#</th>
+                        <th colspan="2" class="text-center">XXS</th>
+                        <th colspan="2" class="text-center">XS</th>
+
                         <th colspan="2" class="text-center">Small</th>
                         <th colspan="2" class="text-center">Medium</th>
                         <th colspan="2" class="text-center">Large</th>
+                        <th colspan="2" class="text-center">XL</th>
+                        <th colspan="2" class="text-center">XXL</th>
+
                     </tr>
                     <tr>
                         <td>Pants Width</td>
+                        <td>{{ this.item[0].xxs.PantsW[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.PantsW[1] }}
+                        </td>
+                        <td>{{ this.item[0].xs.PantsW[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.PantsW[1] }}
+                        </td>
                         <td>{{ this.item[0].small.PantsW[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.PantsW[1] }}
@@ -704,11 +834,27 @@
                         </td>
                         <td class=""> {{ this.item[0].large.PantsW[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.PantsW[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.PantsW[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.PantsW[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.PantsW[1] }}
+                        </td>
 
                     </tr>
 
                     <tr>
                         <td>Hips</td>
+                        <td> {{ this.item[0].xxs.Hips[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.Hips[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.Hips[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.Hips[1] }}
+                        </td>
                         <td> {{ this.item[0].small.Hips[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.Hips[1] }}
@@ -723,11 +869,27 @@
                         </td>
                         <td class=""> {{ this.item[0].large.Hips[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.Hips[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.Hips[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.Hips[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.Hips[1] }}
+                        </td>
 
                     </tr>
 
                     <tr>
                         <td>Length</td>
+                        <td> {{ this.item[0].xxs.Length[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.Length[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.Length[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.Length[1] }}
+                        </td>
                         <td> {{ this.item[0].small.Length[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.Length[1] }}
@@ -742,11 +904,29 @@
                         </td>
                         <td class=""> {{ this.item[0].large.Length[1] }}
                         </td>
+                        <td> {{ this.item[0].xl.Length[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.Length[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.Length[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.Length[1] }}
+                        </td>
 
                     </tr>
 
                     <tr>
                         <td>Crotch</td>
+
+                        <td> {{ this.item[0].xxs.Crotch[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.Crotch[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.Crotch[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.Crotch[1] }}
+                        </td>
+
                         <td> {{ this.item[0].small.Crotch[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.Crotch[1] }}
@@ -762,10 +942,27 @@
                         <td class=""> {{ this.item[0].large.Crotch[1] }}
                         </td>
 
+                        <td> {{ this.item[0].xl.Crotch[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.Crotch[1] }}
+                        </td>
+                        <td> {{ this.item[0].xxl.Crotch[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.Crotch[1] }}
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Thigh</td>
+                        <td> {{ this.item[0].xxs.Thigh[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.Thigh[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.Thigh[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.Thigh[1] }}
+                        </td>
                         <td> {{ this.item[0].small.Thigh[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.Thigh[1] }}
@@ -781,10 +978,29 @@
                         <td class=""> {{ this.item[0].large.Thigh[1] }}
                         </td>
 
+                        <td> {{ this.item[0].xl.Thigh[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.Thigh[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xxl.Thigh[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.Thigh[1] }}
+                        </td>
+
                     </tr>
 
                     <tr>
                         <td>Knee</td>
+                        <td> {{ this.item[0].xxs.Knee[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxs.Knee[1] }}
+                        </td>
+                        <td> {{ this.item[0].xs.Knee[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xs.Knee[1] }}
+                        </td>
+
                         <td> {{ this.item[0].small.Knee[0] }}
                         </td>
                         <td class=""> {{ this.item[0].small.Knee[1] }}
@@ -799,6 +1015,17 @@
                         </td>
                         <td class=""> {{ this.item[0].large.Knee[1] }}
                         </td>
+
+                        <td> {{ this.item[0].xl.Knee[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xl.Knee[1] }}
+                        </td>
+
+                        <td> {{ this.item[0].xxl.Knee[0] }}
+                        </td>
+                        <td class=""> {{ this.item[0].xxl.Knee[1] }}
+                        </td>
+
 
                     </tr>
 

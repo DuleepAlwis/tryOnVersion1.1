@@ -1,5 +1,5 @@
 <app-home-navigation></app-home-navigation>
-<!-- Start Banner Area -->
+<!-- Start Banner Area 
 <section class="banner-area organic-breadcrumb mt-0" style="background-color: deeppink">
     <div class="container">
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
@@ -15,40 +15,60 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 <!-- End Banner Area -->
 
 <!-- Start My Account -->
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <div class="ml-5 mr-5 mt-5 mb-3" style="align-content: center;margin-left: 57px">
+                <button class="btn btn-large btn-success ml-5 mr-5 p-1" (click)="this.invertLogginForm()" [disabled]="!this.logginForm">Signup</button> <button class="btn btn-large btn-success ml-5 mr-5 p-1" (click)="this.invertLogginForm()" [disabled]="this.logginForm">Login</button>
 
-            <div class="login-form" *ngIf="!this.passwordForgot">
+            </div>
+            <div class="signup-form" *ngIf="!this.passwordForgot && this.logginForm" style="background-color: gainsboro">
                 <h3 class="billing-title text-center">Login</h3>
-                <p class="text-center mt-80 mb-40">Welcome back! Sign in to your account </p>
+                <p class="text-center mt-80 mb-40 text-black">Welcome back! Sign in to your account </p>
                 <form [formGroup]="form" (submit)="login()">
-                    <input type="text" placeholder="Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email*'" required class="common-input mt-20" formControlName="email">
-                    <input type="password" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" required class="common-input mt-20" formControlName="password">
-                    <input type="submit" class="view-btn color-2 mt-20 w-100" value="Login">
+                    <input type="text" placeholder="Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email*'" required class="common-input mt-20 form-control ml-1 mr-1" formControlName="email">
+                    <input type="password" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" required class="common-input mt-20 form-control ml-1 mr-1" formControlName="password">
+                    <input type="submit" class="btn btn-primary color-2 mt-20 mr-5 ml-5" value="Login"> <input type="reset" class="btn btn-primary color-2 mt-20 ml-5" value="Cancel">
+
                     <div class="mt-20 d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center"><input type="checkbox" class="pixel-checkbox" id="login-1"><label for="login-1">Remember me</label></div>
                         <a (click)="forgotpassword()">Lost your password?</a>
+
                     </div>
                 </form>
             </div>
-            <div class="login-form" *ngIf="this.passwordForgot">
+            <div class="signup-form" *ngIf="this.passwordForgot" style="background-color: gainsboro">
                 <h3 class="billing-title text-center">Forgot Password</h3>
                 <p class="text-center mt-80 mb-40">Verification code will be sent to the email you provide </p>
 
                 <form [formGroup]="form" (submit)="login()">
-                    <input type="text" placeholder="Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email*'" required class="common-input mt-20" formControlName="email">
+                    <input type="text" placeholder="Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email*'" required class="form-control ml-1 mr-1 common-input mt-20" formControlName="email">
                     <input type="submit" class="view-btn color-2 mt-20 w-100" value="Send">
                     <div class="mt-20 d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center"><input type="checkbox" class="pixel-checkbox" id="login-1"><label for="login-1">Remember me</label></div>
                     </div>
                 </form>
             </div>
+            <div class="signup-form" *ngIf="!this.passwordForgot && !this.logginForm" style="background-color: gainsboro">
+                <h3 class="billing-title text-center">SignUp</h3>
+                <p class="text-center mt-40 mb-30 text-black">Create your very own account </p>
+                <form [formGroup]="formRegister" (submit)="signup()" action="#">
+                    <input type="text" placeholder="Full name*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Full name*'" required class="form-control common-input mt-20">
+                    <input type="email" placeholder="Email address*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email address*'" required class="form-control common-input mt-20">
+                    <input type="text" placeholder="Phone number*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Phone number*'" required class="form-control common-input mt-20">
+                    <input type="password" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" required class="form-control common-input mt-20">
+                    <input type="submit" class="btn btn-primary color-2 mt-20 mr-5 ml-5" value="Save"> <input type="reset" class="btn btn-primary color-2 mt-20 ml-5" value="Cancel">
+
+
+                </form>
+            </div>
         </div>
+        <!--
         <div class="col-md-6">
             <div class="register-form" style="background-color: deeppink">
                 <h3 class="billing-title text-center">Register</h3>
@@ -64,6 +84,7 @@
                 </form>
             </div>
         </div>
+    -->
     </div>
 </div>
 <!-- End My Account -->

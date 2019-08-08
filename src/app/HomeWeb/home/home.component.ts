@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   isLoggedIn()
   {
-    return this.authService.getIsAuth();
+    return this.authService.getIsAuth() && this.authService.getRole()=="C";
   }
 
 }
